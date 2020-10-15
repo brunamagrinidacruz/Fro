@@ -18,11 +18,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-    public void abrirTelaCadastro(View view){
-        Intent intent = new Intent(this, Cadastro.class);
+    public void abrirTelaInicial(View view){
+        Intent intent = new Intent(this, TelaInicial.class);
         startActivity(intent);
     }
-
-
 
 }
