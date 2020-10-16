@@ -6,9 +6,12 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.io.OutputStream;
+import java.io.Reader;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.ProtocolException;
@@ -47,7 +50,7 @@ public class PlantId extends AsyncTask<Void, Void, String> {
         /*!< Adicionando detalhes */
         JSONArray plantDetails = new JSONArray()
                 .put("common_names")
-                .put("url")
+//                .put("url")
                 .put("name_authority")
                 .put("wiki_description")
                 .put("taxonomy")
@@ -82,10 +85,12 @@ public class PlantId extends AsyncTask<Void, Void, String> {
         os.write(data.toString().getBytes());
         os.close();
 
+        con.connect();
+
         /*!< Lendo resposta da requisicao */
-        Scanner scanner = new Scanner(url.openStream());
-        while (scanner.hasNext())
-            resposta.append(scanner.next());
+        Reader in = new BufferedReader(new InputStreamReader(con.getInputStream(), "UTF-8"));
+        for (int c; (c = in.read()) >= 0;)
+            resposta.append((char) c);
 
         con.disconnect();
 
