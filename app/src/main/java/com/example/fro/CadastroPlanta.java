@@ -7,6 +7,7 @@ import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.util.Base64;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import org.json.JSONArray;
@@ -43,6 +44,8 @@ public class CadastroPlanta extends AppCompatActivity {
         if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK) {
             Bundle extras = data.getExtras();
             Bitmap imageBitmap = (Bitmap) extras.get("data");
+            ImageView fotoDaPlanta = findViewById(R.id.fotoDaPlanta);
+            fotoDaPlanta.setImageBitmap(imageBitmap);
 
             /*!< Conversao de bitmap para byte array */
             ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
@@ -57,10 +60,12 @@ public class CadastroPlanta extends AppCompatActivity {
                 String respostaPlantId = new PlantId(imagemPlantaBase64).execute().get();
 
                 /*!< Objeto JSON da resposta da API */
-                JSONObject planta = new JSONObject(respostaPlantId);
+                JSONObject plantaJson = new JSONObject(respostaPlantId);
 
                 /*!< Pegando lista de sugestoes de plantas */
-                JSONArray sugestoes = planta.getJSONArray("suggestions");
+                JSONArray sugestoes = plantaJson.getJSONArray("suggestions");
+
+                System.out.println(sugestoes);
 
                 /*!< Pegando a primeira sugestao */
                 JSONObject primeiraSugestao = sugestoes.getJSONObject(0);
@@ -71,10 +76,12 @@ public class CadastroPlanta extends AppCompatActivity {
                 /*!< Pegando array com os nomes comuns da planta */
                 JSONArray nomesComunsDaPrimeiraSugestao = detalhesDaPrimeiraSugestao.getJSONArray("common_names");
 
-                System.out.println(nomesComunsDaPrimeiraSugestao);
+                /*!< Identificando a planta */
+                BancoDePlantas bancoDePlantas = new BancoDePlantas();
+                Planta planta = bancoDePlantas.identificarPlanta(nomesComunsDaPrimeiraSugestao);
 
-                TextView especie = findViewById(R.id.especie);
-                especie.setText(nomesComunsDaPrimeiraSugestao.getJSONObject(0).toString());
+                TextView informacoesPlanta = findViewById(R.id.informacoesPlanta);
+                informacoesPlanta.setText("Nome: " + planta.getNome());
             } catch (ExecutionException e) {
                 e.printStackTrace();
             } catch (InterruptedException e) {

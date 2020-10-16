@@ -1,0 +1,345 @@
+{
+  "id": 6715664,
+  "custom_id": null,
+  "meta_data": {
+    "latitude": null,
+    "longitude": null,
+    "datetime": "2020-10-16"
+  },
+  "uploaded_datetime": 1602850668.981279,
+  "finished_datetime": 1602850669.917886,
+  "images": [
+    {
+      "file_name": "4992e2df5e3345d188680fba791b740a.jpg",
+      "url": "https://plant.id/media/images/4992e2df5e3345d188680fba791b740a.jpg"
+    }
+  ],
+  "suggestions": [
+    {
+      "id": 49003769,
+      "plant_name": "Sansevieria cylindrica",
+      "plant_details": {
+        "scientific_name": "Sansevieria cylindrica",
+        "structured_name": {
+          "genus": "sansevieria",
+          "species": "cylindrica"
+        },
+        "common_names": [
+          "Cylindrical snake plant",
+          "African spear",
+          "Spear sansevieria",
+          "Saint bárbara sword"
+        ],
+        "url": "http://en.wikipedia.org/wiki/Sansevieria_cylindrica",
+        "name_authority": "Sansevieria cylindrica Bojer ex Hook.",
+        "wiki_description": {
+          "value": "Sansevieria cylindrica, also known as the cylindrical snake plant, African spear or spear sansevieria or in Brazil Saint Bárbara Sword,  is a succulent plant native to Angola.",
+          "citation": "http://en.wikipedia.org/wiki/Sansevieria_cylindrica",
+          "license_name": "CC BY-SA 3.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/3.0/"
+        },
+        "taxonomy": {
+          "kingdom": "Plantae",
+          "phylum": "Tracheophyta",
+          "class": "Liliopsida",
+          "order": "Asparagales",
+          "family": "Asparagaceae",
+          "genus": "Sansevieria"
+        },
+        "synonyms": []
+      },
+      "probability": 0.4065209168869528,
+      "confirmed": false,
+      "similar_images": [
+        {
+          "id": "2190fc33e60af0a2edd8306c38c6aac9",
+          "similarity": 0.8019000083834027,
+          "url": "https://storage.googleapis.com/plant_id_images/similar_images/2019_05/images/Sansevieria cylindrica/2190fc33e60af0a2edd8306c38c6aac9.jpg",
+          "url_small": "https://storage.googleapis.com/plant_id_images/similar_images/2019_05/images/Sansevieria cylindrica/2190fc33e60af0a2edd8306c38c6aac9.small.jpg"
+        },
+        {
+          "id": "56b1ad48f41320f9e2a4aa754e15aad9",
+          "similarity": 0.7559435051234328,
+          "url": "https://storage.googleapis.com/plant_id_images/similar_images/2019_05/images/Sansevieria cylindrica/56b1ad48f41320f9e2a4aa754e15aad9.jpg",
+          "url_small": "https://storage.googleapis.com/plant_id_images/similar_images/2019_05/images/Sansevieria cylindrica/56b1ad48f41320f9e2a4aa754e15aad9.small.jpg"
+        }
+      ]
+    },
+    {
+      "id": 49003770,
+      "plant_name": "Marginatocereus marginatus",
+      "plant_details": {
+        "scientific_name": "Pachycereus marginatus",
+        "structured_name": {
+          "genus": "pachycereus",
+          "species": "marginatus"
+        },
+        "common_names": [
+          "Mexican fencepost cactus"
+        ],
+        "url": "http://en.wikipedia.org/wiki/Pachycereus_marginatus",
+        "name_authority": "Pachycereus marginatus (DC.) Britton & Rose",
+        "wiki_description": {
+          "value": "Pachycereus marginatus is a species of plant in the family Cactaceae. (sometimes called Mexican fencepost cactus.) It has columnar trunks that grow slowly to 12 feet (3.7 m) and may reach 20 feet (6.1 m) in height. Stems are 3 to 4 inches (9–10 cm) in diameter, with ribs 5 to 7 in (13–18 cm). Its central spine is about 3/8 inch (1 cm) in diameter with five to 9 radials and slightly yellowish in color. Its cuttings are sometimes used to create fences, as its spines are not as large or dangerous as some cacti.",
+          "citation": "http://en.wikipedia.org/wiki/Pachycereus_marginatus",
+          "license_name": "CC BY-SA 3.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/3.0/"
+        },
+        "taxonomy": {
+          "kingdom": "Plantae",
+          "phylum": "Tracheophyta",
+          "class": "Magnoliopsida",
+          "order": "Caryophyllales",
+          "family": "Cactaceae",
+          "genus": "Pachycereus"
+        },
+        "synonyms": [
+          "Marginatocereus marginatus",
+          "Stenocereus marginatus",
+          "Marginatocereus marginatus",
+          "Stenocereus marginatus"
+        ]
+      },
+      "probability": 0.37413704041051987,
+      "confirmed": false,
+      "similar_images": [
+        {
+          "id": "5e76a640124ab62095254f8938303edf",
+          "similarity": 0.9207109444901024,
+          "url": "https://storage.googleapis.com/plant_id_images/similar_images/2019_05/images/Marginatocereus marginatus/5e76a640124ab62095254f8938303edf.jpg",
+          "url_small": "https://storage.googleapis.com/plant_id_images/similar_images/2019_05/images/Marginatocereus marginatus/5e76a640124ab62095254f8938303edf.small.jpg"
+        },
+        {
+          "id": "e2bafd91ad764f182b1933bfcbd58fd4",
+          "similarity": 0.8333803437172301,
+          "url": "https://storage.googleapis.com/plant_id_images/similar_images/2019_05/images/Marginatocereus marginatus/e2bafd91ad764f182b1933bfcbd58fd4.jpg",
+          "url_small": "https://storage.googleapis.com/plant_id_images/similar_images/2019_05/images/Marginatocereus marginatus/e2bafd91ad764f182b1933bfcbd58fd4.small.jpg"
+        }
+      ]
+    },
+    {
+      "id": 49003771,
+      "plant_name": "Sansevieria trifasciata",
+      "plant_details": {
+        "scientific_name": "Sansevieria trifasciata",
+        "structured_name": {
+          "genus": "sansevieria",
+          "species": "trifasciata"
+        },
+        "common_names": [
+          "Snake plant",
+          "Dracaena trifasciata",
+          "Saint george's sword",
+          "Mother-in-law's tongue",
+          "Viper's bowstring hemp"
+        ],
+        "url": "http://en.wikipedia.org/wiki/Sansevieria_trifasciata",
+        "name_authority": "Sansevieria trifasciata Prain",
+        "wiki_description": {
+          "value": "Dracaena trifasciata is a species of flowering plant in the family Asparagaceae, native to tropical West Africa from Nigeria east to the Congo. It is most commonly known as the snake plant, Saint George's sword, mother-in-law's tongue, and viper's bowstring hemp, among other names. Until 2017, it was known under the synonym Sansevieria trifasciata.",
+          "citation": "http://en.wikipedia.org/wiki/Sansevieria_trifasciata",
+          "license_name": "CC BY-SA 3.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/3.0/"
+        },
+        "taxonomy": {
+          "kingdom": "Plantae",
+          "phylum": "Tracheophyta",
+          "class": "Liliopsida",
+          "order": "Asparagales",
+          "family": "Asparagaceae",
+          "genus": "Sansevieria"
+        },
+        "synonyms": [
+          "Aletris hyacinthoides var. zeylanica",
+          "Aletris zeylanica",
+          "Aloe hyacinthoides var. zeylanica",
+          "Aloe zeylanica",
+          "Sansevieria zeylanica"
+        ]
+      },
+      "probability": 0.040768514253331035,
+      "confirmed": false,
+      "similar_images": [
+        {
+          "id": "133df389e81a3c2a48200249e47752f8",
+          "similarity": 0.8195394188873896,
+          "url": "https://storage.googleapis.com/plant_id_images/similar_images/2019_05/images/Sansevieria trifasciata/133df389e81a3c2a48200249e47752f8.jpg",
+          "url_small": "https://storage.googleapis.com/plant_id_images/similar_images/2019_05/images/Sansevieria trifasciata/133df389e81a3c2a48200249e47752f8.small.jpg"
+        },
+        {
+          "id": "39cb410d9de094a9bb83b6abcd5f6b2d",
+          "similarity": 0.795395339452596,
+          "url": "https://storage.googleapis.com/plant_id_images/similar_images/2019_05/images/Sansevieria trifasciata/39cb410d9de094a9bb83b6abcd5f6b2d.jpg",
+          "url_small": "https://storage.googleapis.com/plant_id_images/similar_images/2019_05/images/Sansevieria trifasciata/39cb410d9de094a9bb83b6abcd5f6b2d.small.jpg"
+        }
+      ]
+    },
+    {
+      "id": 49003772,
+      "plant_name": "Pachycereus pringlei",
+      "plant_details": {
+        "scientific_name": "Pachycereus pringlei",
+        "structured_name": {
+          "genus": "pachycereus",
+          "species": "pringlei"
+        },
+        "common_names": [
+          "Mexican giant cardon",
+          "Elephant cactus",
+          "Cardón"
+        ],
+        "url": "http://en.wikipedia.org/wiki/Pachycereus_pringlei",
+        "name_authority": "Pachycereus pringlei Britton & Rose",
+        "wiki_description": {
+          "value": "Pachycereus pringlei, also known as Mexican giant cardon or elephant cactus, is a species of cactus native to northwestern Mexico in the states of Baja California, Baja California Sur, and Sonora. It is commonly known as cardón, a name derived from the Spanish word cardo, meaning \"thistle\".Large stands of this cactus still exist, but many have been destroyed as land has been cleared for cultivation in Sonora.\nThe fruit of this cactus was an important food for the Seri people in Sonora, who call the cactus xaasj.The flesh of this cactus contains alkaloids, and may have been used as a psychoactive plant in Mexico.A symbiotic relationship with bacterial and fungal colonies on its roots allows P. pringlei to grow on bare rock even where no soil is available at all, as the bacteria can fix nitrogen from the air and break down the rock to produce nutrients. The cactus even packages symbiotic bacteria in with its seeds.",
+          "citation": "http://en.wikipedia.org/wiki/Pachycereus_pringlei",
+          "license_name": "CC BY-SA 3.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/3.0/"
+        },
+        "taxonomy": {
+          "kingdom": "Plantae",
+          "phylum": "Tracheophyta",
+          "class": "Magnoliopsida",
+          "order": "Caryophyllales",
+          "family": "Cactaceae",
+          "genus": "Pachycereus"
+        },
+        "synonyms": [
+          "Pachycereus calvus",
+          "Cereus calvus",
+          "Cereus pringlei",
+          "Cereus titan",
+          "Pachycereus calvus",
+          "Pachycereus titan"
+        ]
+      },
+      "probability": 0.02064056235385963,
+      "confirmed": false,
+      "similar_images": [
+        {
+          "id": "61ea2f956307330c6fcd6768a0afdb0f",
+          "similarity": 0.8702199501174317,
+          "url": "https://storage.googleapis.com/plant_id_images/similar_images/2019_05/images/Pachycereus pringlei/61ea2f956307330c6fcd6768a0afdb0f.jpg",
+          "url_small": "https://storage.googleapis.com/plant_id_images/similar_images/2019_05/images/Pachycereus pringlei/61ea2f956307330c6fcd6768a0afdb0f.small.jpg"
+        },
+        {
+          "id": "33835325dc6cfef6a2ceac58da28b333",
+          "similarity": 0.826011915200199,
+          "url": "https://storage.googleapis.com/plant_id_images/similar_images/2019_05/images/Pachycereus pringlei/33835325dc6cfef6a2ceac58da28b333.jpg",
+          "url_small": "https://storage.googleapis.com/plant_id_images/similar_images/2019_05/images/Pachycereus pringlei/33835325dc6cfef6a2ceac58da28b333.small.jpg"
+        }
+      ]
+    },
+    {
+      "id": 49003773,
+      "plant_name": "Agave sisalana",
+      "plant_details": {
+        "scientific_name": "Agave sisalana",
+        "structured_name": {
+          "genus": "agave",
+          "species": "sisalana"
+        },
+        "common_names": [
+          "Sisal"
+        ],
+        "url": "http://en.wikipedia.org/wiki/Agave_sisalana",
+        "name_authority": "Agave sisalana Perrine",
+        "wiki_description": {
+          "value": "Sisal (, Spanish: [siˈsal]), with the botanical name Agave sisalana, is a species of Agave native to southern Mexico but widely cultivated and naturalized in many other countries. It yields a stiff fibre used in making various products. The term sisal may refer either to the plant's common name or the fibre, depending on the context. It is sometimes referred to as \"sisal hemp\", because for centuries hemp was a major source for fibre, and other fibre sources were named after it.\nThe sisal fibre is traditionally used for rope and twine, and has many other uses, including paper, cloth, footwear, hats, bags, carpets, and dartboards.",
+          "citation": "http://en.wikipedia.org/wiki/Agave_sisalana",
+          "license_name": "CC BY-SA 3.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/3.0/"
+        },
+        "taxonomy": {
+          "kingdom": "Plantae",
+          "phylum": "Tracheophyta",
+          "class": "Liliopsida",
+          "order": "Asparagales",
+          "family": "Asparagaceae",
+          "genus": "Agave"
+        },
+        "synonyms": [
+          "Agave rigida var. sisalana",
+          "Agave rigida",
+          "Agave rigida var. sisalana"
+        ]
+      },
+      "probability": 0.016469471003091207,
+      "confirmed": false,
+      "similar_images": [
+        {
+          "id": "7187a8125528f95b2c0bd860ba47ca0c",
+          "similarity": 0.8044154816977789,
+          "url": "https://storage.googleapis.com/plant_id_images/similar_images/2019_05/images/Agave sisalana/7187a8125528f95b2c0bd860ba47ca0c.jpg",
+          "url_small": "https://storage.googleapis.com/plant_id_images/similar_images/2019_05/images/Agave sisalana/7187a8125528f95b2c0bd860ba47ca0c.small.jpg"
+        },
+        {
+          "id": "e68d2bfb3d04f619869f27a6d231cb42",
+          "similarity": 0.7967618735975984,
+          "url": "https://storage.googleapis.com/plant_id_images/similar_images/2019_05/images/Agave sisalana/e68d2bfb3d04f619869f27a6d231cb42.jpg",
+          "url_small": "https://storage.googleapis.com/plant_id_images/similar_images/2019_05/images/Agave sisalana/e68d2bfb3d04f619869f27a6d231cb42.small.jpg"
+        }
+      ]
+    },
+    {
+      "id": 49003774,
+      "plant_name": "Ravenala madagascariensis",
+      "plant_details": {
+        "scientific_name": "Ravenala madagascariensis",
+        "structured_name": {
+          "genus": "ravenala",
+          "species": "madagascariensis"
+        },
+        "common_names": [
+          "Traveller's palm",
+          "Ravenala",
+          "Traveller's tree"
+        ],
+        "url": "http://en.wikipedia.org/wiki/Ravenala_madagascariensis",
+        "name_authority": "Ravenala madagascariensis Sonn.",
+        "wiki_description": {
+          "value": "Ravenala is a genus of flowering plants with a single species, Ravenala madagascariensis, commonly known as traveller's tree or traveller's palm, from Madagascar. It is not a true palm (family Arecaceae) but a member of a monocotyledonous flowering plant family, Strelitziaceae.  The genus is closely related to the southern African genus Strelitzia and the South American genus Phenakospermum.  Some older classifications include these genera in the banana family (Musaceae). Although it is usually considered to be a single species, four different forms have been distinguished.",
+          "citation": "http://en.wikipedia.org/wiki/Ravenala_madagascariensis",
+          "license_name": "CC BY-SA 3.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/3.0/"
+        },
+        "taxonomy": {
+          "kingdom": "Plantae",
+          "phylum": "Tracheophyta",
+          "class": "Liliopsida",
+          "order": "Zingiberales",
+          "family": "Strelitziaceae",
+          "genus": "Ravenala"
+        },
+        "synonyms": [
+          "Urania madagascariensis",
+          "Urania speciosa"
+        ]
+      },
+      "probability": 0.010613607692348889,
+      "confirmed": false,
+      "similar_images": [
+        {
+          "id": "e066605d49957e489b151394bec09390",
+          "similarity": 0.8235927981836431,
+          "url": "https://storage.googleapis.com/plant_id_images/similar_images/2019_05/images/Ravenala madagascariensis/e066605d49957e489b151394bec09390.jpg",
+          "url_small": "https://storage.googleapis.com/plant_id_images/similar_images/2019_05/images/Ravenala madagascariensis/e066605d49957e489b151394bec09390.small.jpg"
+        },
+        {
+          "id": "a43cb9854a674f972924adef53de1d8e",
+          "similarity": 0.7423261115859346,
+          "url": "https://storage.googleapis.com/plant_id_images/similar_images/2019_05/images/Ravenala madagascariensis/a43cb9854a674f972924adef53de1d8e.jpg",
+          "url_small": "https://storage.googleapis.com/plant_id_images/similar_images/2019_05/images/Ravenala madagascariensis/a43cb9854a674f972924adef53de1d8e.small.jpg"
+        }
+      ]
+    }
+  ],
+  "modifiers": [
+    "crops_fast",
+    "similar_images"
+  ],
+  "secret": "3tbtMSVJqBaNZce",
+  "fail_cause": null,
+  "countable": true,
+  "feedback": null
+}
