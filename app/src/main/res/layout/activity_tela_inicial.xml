@@ -12,6 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="28dp"
         android:layout_marginBottom="28dp"
+        android:onClick="reconhecimentoDePlanta"
         android:text="+"
         android:textSize="36sp"
         app:layout_constraintBottom_toBottomOf="parent"
