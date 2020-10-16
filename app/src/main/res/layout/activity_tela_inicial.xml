@@ -90,12 +90,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/lightgreen"
-            android:onClick="reconhecimentoDePlanta"
+            android:onClick="abrirTelaCadastroPlanta"
             android:src="@drawable/ic_add"
-            app:tint="#FFFFFF"
             app:borderWidth="0dp"
             app:layout_anchor="@id/bottomAppBar"
-            app:maxImageSize="35dp" />
+            app:maxImageSize="35dp"
+            app:tint="#FFFFFF" />
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 

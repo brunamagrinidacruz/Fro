@@ -53,6 +53,7 @@ public class CadastroPlanta extends AppCompatActivity {
             String imagemPlantaBase64 = Base64.encodeToString(byteArray, Base64.DEFAULT);
 
             try {
+                /*!< Chamando a API */
                 String respostaPlantId = new PlantId(imagemPlantaBase64).execute().get();
 
                 /*!< Objeto JSON da resposta da API */
@@ -69,6 +70,8 @@ public class CadastroPlanta extends AppCompatActivity {
 
                 /*!< Pegando array com os nomes comuns da planta */
                 JSONArray nomesComunsDaPrimeiraSugestao = detalhesDaPrimeiraSugestao.getJSONArray("common_names");
+
+                System.out.println(nomesComunsDaPrimeiraSugestao);
 
                 TextView especie = findViewById(R.id.especie);
                 especie.setText(nomesComunsDaPrimeiraSugestao.getJSONObject(0).toString());
