@@ -27,7 +27,7 @@ public class PlantId extends AsyncTask<Void, Void, String> {
     private String apiKey = "5P203X1zTMgsllLH52vLIlVHxro52vlU49NxPicnt3ztFMZacO";
 
     public PlantId(String imagemPlantaBase64) {
-        this.imagemPlantaBase64 = "data:image/jpeg;base64," + imagemPlantaBase64;
+        this.imagemPlantaBase64 = imagemPlantaBase64;
     }
 
     private JSONObject criarMensagem() throws JSONException {
