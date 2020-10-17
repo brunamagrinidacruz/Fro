@@ -4,10 +4,17 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.util.Base64;
+import android.util.Log;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.ImageView;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 import org.json.JSONArray;
@@ -15,6 +22,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.ByteArrayOutputStream;
+import java.io.InputStream;
 import java.util.concurrent.ExecutionException;
 
 /**
@@ -44,8 +52,6 @@ public class CadastroPlanta extends AppCompatActivity {
         if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK) {
             Bundle extras = data.getExtras();
             Bitmap imageBitmap = (Bitmap) extras.get("data");
-            ImageView fotoDaPlanta = findViewById(R.id.fotoDaPlanta);
-            fotoDaPlanta.setImageBitmap(imageBitmap);
 
             /*!< Conversao de bitmap para byte array */
             ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
@@ -65,23 +71,56 @@ public class CadastroPlanta extends AppCompatActivity {
                 /*!< Pegando lista de sugestoes de plantas */
                 JSONArray sugestoes = plantaJson.getJSONArray("suggestions");
 
-                System.out.println(sugestoes);
-
                 /*!< Pegando a primeira sugestao */
                 JSONObject primeiraSugestao = sugestoes.getJSONObject(0);
 
-                /*!< Pegando os detalhes das plantas */
-                JSONObject detalhesDaPrimeiraSugestao = new JSONObject(primeiraSugestao.getString("plant_details"));
+                /*!< Componentes da tela que serao apresentados dependendo do resultado da API */
+                ImageView fotoDaPlanta = findViewById(R.id.fotoDaPlanta);
+                TextView tipoPlantaTexto = findViewById(R.id.tipoPlantaTexto);
+                tipoPlantaTexto.setVisibility(View.INVISIBLE);
+                Spinner tipoPlantaSpinner = (Spinner) findViewById(R.id.tipoPlantaSpinner);
+                tipoPlantaSpinner.setVisibility(View.INVISIBLE);
 
-                /*!< Pegando array com os nomes comuns da planta */
-                JSONArray nomesComunsDaPrimeiraSugestao = detalhesDaPrimeiraSugestao.getJSONArray("common_names");
-
-                /*!< Identificando a planta */
                 BancoDePlantas bancoDePlantas = new BancoDePlantas();
-                Planta planta = bancoDePlantas.identificarPlanta(nomesComunsDaPrimeiraSugestao);
 
-                TextView informacoesPlanta = findViewById(R.id.informacoesPlanta);
-                informacoesPlanta.setText("Nome: " + planta.getNome());
+                /*!< Probabilidade da API acertar deve ser maior que 30% */
+                double probabilidade = primeiraSugestao.getDouble("probability");
+                if(probabilidade >= 0.3) { /*!< Utiliza a informação da API */
+                    /*!< Pegando os detalhes das plantas */
+                    JSONObject detalhesDaPrimeiraSugestao = new JSONObject(primeiraSugestao.getString("plant_details"));
+
+                    /*!< Pegando array com os nomes comuns da planta */
+                    JSONArray nomesComunsDaPrimeiraSugestao = detalhesDaPrimeiraSugestao.getJSONArray("common_names");
+
+                    /*!< Identificando a planta */
+                    Planta planta = bancoDePlantas.identificarPlanta(nomesComunsDaPrimeiraSugestao);
+
+                    /*!< Configurando coisas da tela */
+                    fotoDaPlanta.setImageBitmap(imageBitmap);
+                    tipoPlantaTexto.setVisibility(View.VISIBLE);
+                    tipoPlantaTexto.setText("Nome: " + planta.getNome());
+                } else { /*!< Como não achou na API, habilita o Spinner para seleção manual */
+                    tipoPlantaSpinner.setVisibility(View.VISIBLE);
+
+                    /*!< Criando Spinner */
+                    ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, bancoDePlantas.getNomesPlantas());
+                    adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                    tipoPlantaSpinner.setAdapter(adapter);
+
+                    /*!< Quando o usuário atualiza a lista de tipos de plantas, irá atualizar a imagem apresentada */
+                    tipoPlantaSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                        @Override
+                        public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
+                            new DownloadImageTask((ImageView) findViewById(R.id.fotoDaPlanta))
+                                    .execute(bancoDePlantas.getUrlPlantas().get(position));
+                        }
+
+                        @Override
+                        public void onNothingSelected(AdapterView<?> adapterView) {
+
+                        }
+                    });
+                }
             } catch (ExecutionException e) {
                 e.printStackTrace();
             } catch (InterruptedException e) {
@@ -89,6 +128,36 @@ public class CadastroPlanta extends AppCompatActivity {
             } catch (JSONException e) {
                 e.printStackTrace();
             }
+
+        } else { /*!< Foto não capturada com sucesso*/
+
+        }
+
+    }
+
+    /*!< Funcao responsavel por baixar imagem do usuario */
+    private class DownloadImageTask extends AsyncTask<String, Void, Bitmap> {
+        ImageView bmImage;
+
+        public DownloadImageTask(ImageView bmImage) {
+            this.bmImage = bmImage;
+        }
+
+        protected Bitmap doInBackground(String... urls) {
+            String urldisplay = urls[0];
+            Bitmap mIcon11 = null;
+            try {
+                InputStream in = new java.net.URL(urldisplay).openStream();
+                mIcon11 = BitmapFactory.decodeStream(in);
+            } catch (Exception e) {
+                Log.e("Error", e.getMessage());
+                e.printStackTrace();
+            }
+            return mIcon11;
+        }
+
+        protected void onPostExecute(Bitmap result) {
+            bmImage.setImageBitmap(result);
         }
     }
 

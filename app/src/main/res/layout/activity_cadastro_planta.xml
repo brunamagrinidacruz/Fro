@@ -7,7 +7,7 @@
     tools:context=".CadastroPlanta">
 
     <TextView
-        android:id="@+id/informacoesPlanta"
+        android:id="@+id/tipoPlantaTexto"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
@@ -60,6 +60,15 @@
         android:layout_marginTop="120dp"
         android:ems="10"
         android:inputType="textPersonName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Spinner
+        android:id="@+id/tipoPlantaSpinner"
+        android:layout_width="289dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="28dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
