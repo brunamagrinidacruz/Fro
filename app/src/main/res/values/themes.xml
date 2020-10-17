@@ -18,9 +18,15 @@
 
     </style>
 
+    <style name="DialogTheme" parent="@style/Base.Theme.AppCompat.Light.Dialog">
+        <item name="android:windowTranslucentStatus">true</item>
+    </style>
+
     <style name="Theme.Frô.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:statusBarColor">@color/lightgreen</item>
     </style>
 
     <style name="Theme.Frô.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />

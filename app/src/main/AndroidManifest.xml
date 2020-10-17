@@ -17,8 +17,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Frô">
         <activity android:name=".CadastroPlanta"></activity>
+        <activity android:name=".MainActivity" />
         <activity android:name=".TelaInicial" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
