@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void abrirTelaInicial(View view){
-        Intent intent = new Intent(this, TelaInicial.class);
+        Intent intent = new Intent(MainActivity.this, TelaInicial.class);
         startActivity(intent);
     }
 

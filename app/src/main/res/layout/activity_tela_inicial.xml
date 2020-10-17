@@ -53,14 +53,14 @@
                 <ImageButton
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="0.8"
+                    android:layout_weight="1.2"
                     app:srcCompat="@drawable/ic_perfil"
                     android:background="?attr/selectableItemBackgroundBorderless"
                     />
                 <ImageButton
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="0.8"
+                    android:layout_weight="1.2"
                     app:srcCompat="@drawable/ic_amigos"
                     android:background="?attr/selectableItemBackgroundBorderless"/>
                 <!--<ImageButton
@@ -71,18 +71,11 @@
                 <ImageButton
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="0.8"
+                    android:layout_weight="1.2"
                     app:srcCompat="@drawable/ic_plantas"
                     android:background="?attr/selectableItemBackgroundBorderless"/>
                     <!-- Se quiser trocar a cor do botão depois é só usar esse comando: -->
                     <!-- app:tint="@color/black" -->
-
-                <ImageButton
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0.8"
-                    app:srcCompat="@drawable/ic_galeria"
-                    android:background="?attr/selectableItemBackgroundBorderless"/>
             </LinearLayout>
         </com.google.android.material.bottomappbar.BottomAppBar>
 
