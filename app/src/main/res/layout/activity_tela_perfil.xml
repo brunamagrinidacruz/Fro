@@ -12,6 +12,7 @@
         android:id="@+id/imageView10"
         android:layout_width="565dp"
         android:layout_height="708dp"
+        android:onClick="abrirTelaConquistas"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.529"

@@ -6,8 +6,10 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
 
 import com.google.android.material.navigation.NavigationView;
 
@@ -45,5 +47,10 @@ public class TelaPerfil extends AppCompatActivity {
         else{
             super.onBackPressed();
         }
+    }
+
+    public void abrirTelaConquistas(View view){
+        Intent intent = new Intent(this, TelaConquistas.class);
+        startActivity(intent);
     }
 }
