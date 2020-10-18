@@ -141,7 +141,7 @@
             android:layout_height="50dp"
             android:ems="10"
             android:fontFamily="@font/sanchez"
-            android:inputType="textPersonName"
+            android:inputType="textCapWords|textCapSentences"
             android:textColor="#000000"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

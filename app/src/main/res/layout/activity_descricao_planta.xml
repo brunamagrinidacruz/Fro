@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".DescricaoPlanta"
     android:id="@+id/drawer_layout"
-    android:fitsSystemWindows="true"
     tools:openDrawer="start">
 
     <androidx.appcompat.widget.LinearLayoutCompat android:layout_height="match_parent" android:layout_width="match_parent">
@@ -27,13 +26,105 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="237dp">
+
+                    <ImageView
+                        android:id="@+id/imagemPlanta"
+                        android:layout_width="281dp"
+                        android:layout_height="180dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.023"
+                        app:srcCompat="@drawable/fro" />
+
+                    <TextView
+                        android:id="@+id/apelidoDaPlanta"
+                        android:layout_width="339dp"
+                        android:layout_height="31dp"
+                        android:background="@drawable/circulo_drawable"
+                        android:paddingTop="5sp"
+                        android:textAlignment="center"
+                        android:textColor="#000000"
+                        android:textSize="20sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/imagemPlanta"
+                        app:layout_constraintVertical_bias="0.76" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
                 <TextView
                     android:id="@+id/descricaoPlanta"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/sanchez"
                     android:textColor="#000000"
-                    android:textSize="20sp" />
+                    android:textSize="18sp" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="116dp">
+
+                    <ImageView
+                        android:id="@+id/imageView6"
+                        android:layout_width="135dp"
+                        android:layout_height="42dp"
+                        app:layout_constraintBottom_toTopOf="@+id/textView9"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.75"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.25"
+                        app:srcCompat="@drawable/btn_editar" />
+
+                    <ImageView
+                        android:id="@+id/imageView5"
+                        android:layout_width="76dp"
+                        android:layout_height="52dp"
+                        android:onClick="abrirTelaGaleria"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.976"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.695"
+                        app:srcCompat="@drawable/btn_galeria" />
+
+                    <TextView
+                        android:id="@+id/textView9"
+                        android:layout_width="213dp"
+                        android:layout_height="28dp"
+                        android:fontFamily="@font/sanchez"
+                        android:lineSpacingExtra="18sp"
+                        android:text="Visualizar fotos da planta"
+                        android:textAlignment="textEnd"
+                        android:textColor="#000000"
+                        android:textSize="18sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/imageView5"
+                        app:layout_constraintHorizontal_bias="1.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.66" />
+
+                    <ImageView
+                        android:id="@+id/imageView9"
+                        android:layout_width="143dp"
+                        android:layout_height="49dp"
+                        app:layout_constraintBottom_toTopOf="@+id/textView9"
+                        app:layout_constraintEnd_toStartOf="@+id/imageView6"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.285"
+                        app:srcCompat="@drawable/btn_excluir" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
             </LinearLayout>
         </ScrollView>
 
@@ -42,6 +133,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
         <include
             android:id="@+id/customToolbar"
             layout="@layout/toolbar"
@@ -49,7 +141,7 @@
             tools:layout_editor_absoluteY="51dp" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <com.google.android.material.navigation.NavigationView
+    <com.google.android.material.navigation.NavigationView
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:id="@+id/nav_view"
