@@ -214,12 +214,16 @@ public class BancoDePlantas {
         bancoDePlantas.put("wild banana", pacova);
 
         Planta cacto = new Planta();
-        cacto.setNome("Cacto");
+        cacto.setNome("Cacto Orelha-de-Coelho");
+        cacto.setComoPlantar ("Para plantar, separe os seguintes itens:  substrato, cascalho ou areia e adubo com nitrogênio e fósforo. Retire o broto com cuidado e, usando luvas de proteção, coloque-o na terra e aperte o substrato, apenas o suficiente para que ele fique em pé. Adicione uma camada de cascalho ou areia sobre a terra ao redor do cacto. Coloque o vaso em um local quente, que receba sol de quatro a seis horas por dia, mas que não seja abafado.");
         cacto.setFrequenciaDeRegamento("Os mini cactos não podem ser regados constantemente, por armazenarem água por bastante tempo. Você pode regá-lo uma vez por semana, durante o verão, uma colher de sopa de água. Durante o inverno, essa quantidade pode ser reduzida para uma vez ao mês. Se a região que você mora é muito úmida, é importante usar vasos de cerâmica, pois eles ajudam a manter a planta longe da umidade.");
         cacto.setLocalAdequadoParaPlantio("Os cactos gostam de lugares ensolarados. Como são plantas de deserto, apenas a claridade intensa não é suficiente. O ideal são pelo menos 2 a 3 dias de sol por semana.");
         cacto.setAltura("O tamanho pode variar.");
         cacto.setPreco("Você encontra cactos a partir de R$3,00.");
-        cacto.setUrlImagemPadrao("cacto");
+        cacto.setFertilizantesRecomendados("Fertilize os cultivos com adubo diluído em água, preferencialmente durante a primavera e o verão. O Forth Cactos é um dos fertilizantes para cactos mais indicados para a etapa de adubação, garantindo plantas sadias, com floração abundante e colorida.");
+        cacto.setPoda("Localize os ramos que serão cortados. A razão mais importante para podar um cacto é eles estarem doentes com fungos e bactérias, com podridão e partes brancas. Remova segmentos secos ou mortos.");
+        cacto.setPragasComuns("Os piolhos de cobra são uma das pragas mais comuns que afetam os cactus, especialmente aqueles que estão diretamente plantados sobre o solo do jardim e não num vaso. Estes atacam diretamente as raízes dos cactus, que vão enfraquecendo lentamente sem razão aparente até morrer. Para os eliminar, será necessário um inseticida de solo que os ataque diretamente.  os ácaros também podem atacar os cactus e danificá-los, uma das possíveis evidências que denotam a presença desta praga são áreas avermelhadas na superfície dos nossos cactus. No caso de as detetar, deverá iniciar um tratamento anti-ácaros nas plantas afetadas.");
+        cacto.setOutrasInformacoes("Todos os tipos de cactos dão flores. Algumas espécies só florescem depois de alcançarem os 80 anos de idade (elas podem viver por até 200 anos) ou os dois metros de altura. Depois que as flores aparecem pela primeira vez, elas voltam todos os anos, na mesma época. Outra das curiosidades sobre os cactos: eles se reproduzem tanto por sementes quanto por estacas!.");
         bancoDePlantas.put("bunny ears", cacto);
         bancoDePlantas.put("angel's-wings", cacto);
         bancoDePlantas.put("bunny ears cactus", cacto);
