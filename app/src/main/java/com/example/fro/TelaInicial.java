@@ -16,6 +16,7 @@ import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 
 import androidx.appcompat.widget.Toolbar;
 import androidx.appcompat.app.AppCompatActivity;
@@ -63,6 +64,9 @@ public class TelaInicial extends AppCompatActivity implements NavigationView.OnN
 
         navigationView.setNavigationItemSelectedListener(this);
         setNavigationViewListener();
+
+        // Deixa seleção verdinha
+        navigationView.setCheckedItem(R.id.itInicio);
     }
 
     public void funcLogout(){
@@ -94,6 +98,62 @@ public class TelaInicial extends AppCompatActivity implements NavigationView.OnN
         // Handle navigation view item clicks here.
         switch (item.getItemId()) {
 
+            case R.id.itInicio: {
+                Intent intent = new Intent(this, TelaInicial.class);
+                startActivity(intent);
+
+                break;
+            }
+
+            case R.id.itTarefas: {
+                Intent intent = new Intent(this, TelaTarefas.class);
+                startActivity(intent);
+
+                break;
+            }
+
+            case R.id.itDoacoes: {
+                Intent intent = new Intent(this, TelaDoacoes.class);
+                startActivity(intent);
+
+                break;
+            }
+
+            case R.id.itNotifAtiva: {
+                Intent intent = new Intent(this, TelaNotificacoes.class);
+                startActivity(intent);
+
+                break;
+            }
+
+            case R.id.itAboutUs: {
+                Intent intent = new Intent(this, TelaSobre.class);
+                startActivity(intent);
+
+                break;
+            }
+
+            case R.id.itAmigos: {
+                Intent intent = new Intent(this, TelaAmigos.class);
+                startActivity(intent);
+
+                break;
+            }
+
+            case R.id.itPerfil: {
+                Intent intent = new Intent(this, TelaPerfil.class);
+                startActivity(intent);
+
+                break;
+            }
+
+            case R.id.itPlantas: {
+                Intent intent = new Intent(this, TelaPlantas.class);
+                startActivity(intent);
+
+                break;
+            }
+
             case R.id.itLogout: {
                 FirebaseAuth.getInstance().signOut();
 
@@ -102,10 +162,18 @@ public class TelaInicial extends AppCompatActivity implements NavigationView.OnN
 
                 break;
             }
+
         }
         //close navigation drawer
         drawerLayout.closeDrawer(GravityCompat.START);
 
         return true;
+    }
+
+
+
+    public void abrirPerfil(){
+        Intent intent = new Intent(this, TelaPerfil.class);
+        startActivity(intent);
     }
 }

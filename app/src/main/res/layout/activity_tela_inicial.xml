@@ -73,13 +73,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:weightSum="5">
+
                 <ImageButton
+                    android:id="@+id/menuBPerfil"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1.2"
-                    app:srcCompat="@drawable/ic_perfil"
                     android:background="?attr/selectableItemBackgroundBorderless"
-                    />
+                    app:srcCompat="@drawable/ic_perfil" />
                 <ImageButton
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"

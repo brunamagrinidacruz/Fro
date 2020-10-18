@@ -1,15 +1,18 @@
 package com.example.fro;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class TelaDoacoes extends AppCompatActivity {
 
@@ -31,9 +34,84 @@ public class TelaDoacoes extends AppCompatActivity {
         drawerLayout.addDrawerListener(toggle);
         toggle.syncState();
         navigationView.setNavigationItemSelectedListener(this::onNavigationItemSelected);
+
+        // Deixa seleção verdinha
+        navigationView.setCheckedItem(R.id.itDoacoes);
     }
 
-    private boolean onNavigationItemSelected(MenuItem menuItem) {
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        // Handle navigation view item clicks here.
+        switch (item.getItemId()) {
+
+            case R.id.itInicio: {
+                Intent intent = new Intent(this, TelaInicial.class);
+                startActivity(intent);
+
+                break;
+            }
+
+            case R.id.itTarefas: {
+                Intent intent = new Intent(this, TelaTarefas.class);
+                startActivity(intent);
+
+                break;
+            }
+
+            case R.id.itDoacoes: {
+                Intent intent = new Intent(this, TelaDoacoes.class);
+                startActivity(intent);
+
+                break;
+            }
+
+            case R.id.itNotifAtiva: {
+                Intent intent = new Intent(this, TelaNotificacoes.class);
+                startActivity(intent);
+
+                break;
+            }
+
+            case R.id.itAboutUs: {
+                Intent intent = new Intent(this, TelaSobre.class);
+                startActivity(intent);
+
+                break;
+            }
+
+            case R.id.itAmigos: {
+                Intent intent = new Intent(this, TelaAmigos.class);
+                startActivity(intent);
+
+                break;
+            }
+
+            case R.id.itPerfil: {
+                Intent intent = new Intent(this, TelaPerfil.class);
+                startActivity(intent);
+
+                break;
+            }
+
+            case R.id.itPlantas: {
+                Intent intent = new Intent(this, TelaPlantas.class);
+                startActivity(intent);
+
+                break;
+            }
+
+            case R.id.itLogout: {
+                FirebaseAuth.getInstance().signOut();
+
+                Intent intToLoginPage = new Intent(TelaDoacoes.this, MainActivity.class);
+                startActivity(intToLoginPage);
+
+                break;
+            }
+
+        }
+        //close navigation drawer
+        drawerLayout.closeDrawer(GravityCompat.START);
+
         return true;
     }
 
