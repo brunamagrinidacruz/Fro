@@ -1,6 +1,10 @@
 package com.example.fro;
 
+import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -11,12 +15,17 @@ import android.os.Bundle;
 import android.provider.MediaStore;
 import android.util.Base64;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
+
+import com.google.android.material.navigation.NavigationView;
+import com.google.android.material.snackbar.Snackbar;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -32,16 +41,48 @@ import java.util.concurrent.ExecutionException;
  * **/
 public class CadastroPlanta extends AppCompatActivity {
 
+    DrawerLayout drawerLayout;
+    NavigationView navigationView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Intent intent = getIntent();
         setContentView(R.layout.activity_cadastro_planta);
+
+        getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN);
+
+        /*!< Menu inferior e lateral */
+        Toolbar toolbar = findViewById(R.id.customToolbar);
+        setSupportActionBar(toolbar);
+        setTitle(" ");
+        drawerLayout = findViewById(R.id.drawer_layout);
+        navigationView = findViewById(R.id.nav_view);
+        navigationView.bringToFront();
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.navigationDrawerOpen, R.string.navigationDrawerClose);
+        drawerLayout.addDrawerListener(toggle);
+        toggle.syncState();
+        navigationView.setNavigationItemSelectedListener(this::onNavigationItemSelected);
+
+        Intent intent = getIntent();
         int tipo = (int) intent.getSerializableExtra("tipo");
         if(tipo == 1) { /*!< Reconhecimento */
             reconhecimentoDePlanta();
         } else { /*!< Manual */
             reconhecimentoManual();
+        }
+    }
+
+    private boolean onNavigationItemSelected(MenuItem menuItem) {
+        return true;
+    }
+
+    @Override
+    public void onBackPressed() {
+        if(drawerLayout.isDrawerOpen(GravityCompat.START)){
+            drawerLayout.closeDrawer(GravityCompat.START);
+        }
+        else{
+            super.onBackPressed();
         }
     }
 
@@ -158,30 +199,18 @@ public class CadastroPlanta extends AppCompatActivity {
 
     }
 
-
-    /*!< Funcao responsavel por baixar imagem do usuario */
-    private class DownloadImageTask extends AsyncTask<String, Void, Bitmap> {
-        ImageView bmImage;
-
-        public DownloadImageTask(ImageView bmImage) {
-            this.bmImage = bmImage;
-        }
-
-        protected Bitmap doInBackground(String... urls) {
-            String urldisplay = urls[0];
-            Bitmap mIcon11 = null;
-            try {
-                InputStream in = new java.net.URL(urldisplay).openStream();
-                mIcon11 = BitmapFactory.decodeStream(in);
-            } catch (Exception e) {
-                Log.e("Error", e.getMessage());
-                e.printStackTrace();
-            }
-            return mIcon11;
-        }
-
-        protected void onPostExecute(Bitmap result) {
-            bmImage.setImageBitmap(result);
+    public void abrirTelaPlanta(View view) {
+        TextView apelidoPlanta = findViewById(R.id.apelidoPlanta);
+        if(apelidoPlanta.getText().toString().matches("")) {
+            Snackbar mySnackbar = Snackbar.make(view, "É necessário escolher um apelido para a platinha!", Snackbar.LENGTH_LONG);
+            mySnackbar.show();
+        } else if(apelidoPlanta.getText().length() > 20) {
+            Snackbar mySnackbar = Snackbar.make(view, "A plantinha deve ter um nome de até 20 caracteres.", Snackbar.LENGTH_LONG);
+            mySnackbar.show();
+        } else {
+            System.out.println("Abrindo nova página");
+            /*!< Cadastrar plantinha no banco de dados */
+            /*!< Abrir tela da plantinha passando a plantinha correspondente */
         }
     }
 

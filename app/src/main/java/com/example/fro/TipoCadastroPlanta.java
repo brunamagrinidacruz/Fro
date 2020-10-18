@@ -25,18 +25,15 @@ public class TipoCadastroPlanta extends AppCompatActivity {
         setContentView(R.layout.activity_tipo_cadastro_planta);
 
         /*!< Menu inferior e lateral */
-
         Toolbar toolbar = findViewById(R.id.customToolbar);
         setSupportActionBar(toolbar);
         setTitle(" ");
-
         drawerLayout = findViewById(R.id.drawer_layout);
         navigationView = findViewById(R.id.nav_view);
         navigationView.bringToFront();
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.navigationDrawerOpen, R.string.navigationDrawerClose);
         drawerLayout.addDrawerListener(toggle);
         toggle.syncState();
-
         navigationView.setNavigationItemSelectedListener(this::onNavigationItemSelected);
     }
 
