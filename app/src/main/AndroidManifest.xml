@@ -16,7 +16,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Frô">
-        <activity android:name=".TelaSobre"></activity>
+        <activity android:name=".TelaDoacoes"></activity>
+        <activity android:name=".TelaTarefas" />
+        <activity android:name=".TelaNotificacoes" />
+        <activity android:name=".TelaSobre" />
         <activity android:name=".TelaPerfilAmigos" />
         <activity android:name=".TelaAmigos" />
         <activity android:name=".TelaConquistas" />
