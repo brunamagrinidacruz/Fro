@@ -26,6 +26,8 @@ public class DescricaoPlanta extends AppCompatActivity {
     NavigationView navigationView;
     private Planta planta;
 
+    boolean veioDoCadastro = false;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,7 +51,11 @@ public class DescricaoPlanta extends AppCompatActivity {
         Intent intent = getIntent();
         String keyPlanta = (String) intent.getSerializableExtra("plantaKey");
         String plantaApelido = (String) intent.getSerializableExtra("plantaApelido");
+        String telaAnteriorCadastro = (String) intent.getSerializableExtra("veioDoCadastro");
         byte[] plantaImagemByte = intent.getByteArrayExtra("plantaImagem");
+
+        if(telaAnteriorCadastro != null && telaAnteriorCadastro.equals("sim"))
+            veioDoCadastro = true;
 
         /*!< Buscando planta */
         BancoDePlantas bancoDePlantas = new BancoDePlantas();
@@ -61,6 +67,7 @@ public class DescricaoPlanta extends AppCompatActivity {
             Bitmap bmp = BitmapFactory.decodeByteArray(plantaImagemByte, 0, plantaImagemByte.length);
             fotoDaPlanta.setImageBitmap(bmp);
         } else {
+            System.out.println(planta.getUrlImagemPadrao());
             String uri = "@drawable/" + planta.getUrlImagemPadrao();
             int imageResource = getResources().getIdentifier(uri, null, getPackageName()); /*!< Pegando o resource da imagem */
             Drawable res = getResources().getDrawable(imageResource);
@@ -91,7 +98,7 @@ public class DescricaoPlanta extends AppCompatActivity {
 
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event)  {
-        if (keyCode == KeyEvent.KEYCODE_BACK ) {
+        if (veioDoCadastro && keyCode == KeyEvent.KEYCODE_BACK) {
             Intent intent = new Intent(this, TelaInicial.class);
             startActivity(intent);
             return true;

@@ -6,10 +6,15 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import android.content.Intent;
+import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
 
 import com.google.android.material.navigation.NavigationView;
+
+import java.io.ByteArrayOutputStream;
 
 public class TelaPlantas extends AppCompatActivity {
 
@@ -45,5 +50,13 @@ public class TelaPlantas extends AppCompatActivity {
         else{
             super.onBackPressed();
         }
+    }
+
+    public void abrirTelaPlanta(View view) {
+        /*!< Abrir tela da plantinha passando a plantinha correspondente */
+        Intent intent = new Intent(this, DescricaoPlanta.class);
+        intent.putExtra("plantaApelido", "Coquinho");
+        intent.putExtra("plantaKey", "bunny ears");
+        startActivity(intent);
     }
 }

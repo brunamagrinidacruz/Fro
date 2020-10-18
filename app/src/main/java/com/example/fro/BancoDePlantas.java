@@ -224,6 +224,7 @@ public class BancoDePlantas {
         cacto.setPoda("Localize os ramos que serão cortados. A razão mais importante para podar um cacto é eles estarem doentes com fungos e bactérias, com podridão e partes brancas. Remova segmentos secos ou mortos.");
         cacto.setPragasComuns("Os piolhos de cobra são uma das pragas mais comuns que afetam os cactus, especialmente aqueles que estão diretamente plantados sobre o solo do jardim e não num vaso. Estes atacam diretamente as raízes dos cactus, que vão enfraquecendo lentamente sem razão aparente até morrer. Para os eliminar, será necessário um inseticida de solo que os ataque diretamente.  os ácaros também podem atacar os cactus e danificá-los, uma das possíveis evidências que denotam a presença desta praga são áreas avermelhadas na superfície dos nossos cactus. No caso de as detetar, deverá iniciar um tratamento anti-ácaros nas plantas afetadas.");
         cacto.setOutrasInformacoes("Todos os tipos de cactos dão flores. Algumas espécies só florescem depois de alcançarem os 80 anos de idade (elas podem viver por até 200 anos) ou os dois metros de altura. Depois que as flores aparecem pela primeira vez, elas voltam todos os anos, na mesma época. Outra das curiosidades sobre os cactos: eles se reproduzem tanto por sementes quanto por estacas!.");
+        cacto.setUrlImagemPadrao("cacto");
         bancoDePlantas.put("bunny ears", cacto);
         bancoDePlantas.put("angel's-wings", cacto);
         bancoDePlantas.put("bunny ears cactus", cacto);
