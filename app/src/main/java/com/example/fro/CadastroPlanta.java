@@ -3,14 +3,21 @@ package com.example.fro;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.app.NotificationCompat;
+import androidx.core.app.NotificationManagerCompat;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import android.app.Notification;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.Drawable;
+import android.media.Image;
 import android.os.AsyncTask;
+import android.os.Build;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.util.Base64;
@@ -20,6 +27,7 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -40,9 +48,16 @@ import java.util.concurrent.ExecutionException;
  * Referencia (converter de bitmap para Base64): https://stackoverflow.com/questions/9224056/android-bitmap-to-base64-string
  * **/
 public class CadastroPlanta extends AppCompatActivity {
+    public static final String CHANNEL_1_ID = "channel1";
+    private NotificationManagerCompat notifManager;
+    ImageView btnPopNotif;
+    String notifTitle = "Hora de regar sua nova frô!";
+    String notifMessage = "Vamos lá?!";
+
 
     DrawerLayout drawerLayout;
     NavigationView navigationView;
+
 
     private String nomeDaPlanta;
     private String urlDaPlanta;
@@ -74,6 +89,46 @@ public class CadastroPlanta extends AppCompatActivity {
             reconhecimentoDePlanta();
         } else { /*!< Manual */
             reconhecimentoManual();
+        }
+
+        notifManager = NotificationManagerCompat.from(this);
+
+        btnPopNotif = findViewById(R.id.btnSalvarNovaFlor);
+
+        btnPopNotif.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                abrirTelaPlanta(v);
+
+                createNotificationChannels();
+                sendOnChannel1(v);
+            }
+        });
+    }
+
+    public void sendOnChannel1(View v){
+        Notification notification = new NotificationCompat.Builder(this, CadastroPlanta.CHANNEL_1_ID)
+                .setSmallIcon(R.drawable.ic_notif)
+                .setContentTitle(notifTitle)
+                .setContentText(notifMessage)
+                .setPriority(NotificationCompat.PRIORITY_HIGH)
+                .setCategory(NotificationCompat.CATEGORY_REMINDER)
+                .build();
+
+        notifManager.notify(1, notification);
+    }
+
+    private void createNotificationChannels(){
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
+            NotificationChannel channel1 = new NotificationChannel(
+                  CHANNEL_1_ID,
+                  "Channel 1",
+                    NotificationManager.IMPORTANCE_HIGH
+            );
+            channel1.setDescription("This is Channel 1");
+
+            NotificationManager manager = getSystemService(NotificationManager.class);
+            manager.createNotificationChannel(channel1);
         }
     }
 

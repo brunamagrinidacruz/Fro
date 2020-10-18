@@ -6,8 +6,8 @@
     android:layout_height="match_parent"
     tools:context=".CadastroPlanta"
     android:id="@+id/drawer_layout"
-    android:fitsSystemWindows="true"
-    tools:openDrawer="start">
+    android:fitsSystemWindows="true">
+<!--    tools:openDrawer="start">-->
 
     <com.google.android.material.navigation.NavigationView
         android:layout_width="wrap_content"
@@ -47,33 +47,33 @@
                 <ImageButton
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="0.85"
+                    android:layout_weight="1.0"
                     android:background="?attr/selectableItemBackgroundBorderless"
                     app:srcCompat="@drawable/ic_perfil" />
 
                 <ImageButton
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="0.85"
+                    android:layout_weight="0.9"
                     android:background="@android:color/transparent" />
 
                 <ImageButton
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="0.85"
+                    android:layout_weight="1.0"
                     android:background="?attr/selectableItemBackgroundBorderless"
                     app:srcCompat="@drawable/ic_amigos" />
 
                 <ImageButton
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="0.85"
+                    android:layout_weight="0.9"
                     android:background="@android:color/transparent" />
 
                 <ImageButton
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="0.85"
+                    android:layout_weight="1.0"
                     android:background="?attr/selectableItemBackgroundBorderless"
                     app:srcCompat="@drawable/ic_plantas" />
             </LinearLayout>
@@ -193,7 +193,7 @@
             app:layout_constraintVertical_bias="0.098" />
 
         <ImageView
-            android:id="@+id/imageView2"
+            android:id="@+id/btnSalvarNovaFlor"
             android:layout_width="274dp"
             android:layout_height="60dp"
             android:onClick="abrirTelaPlanta"

@@ -5,8 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".DescricaoPlanta"
-    android:id="@+id/drawer_layout"
-    tools:openDrawer="start">
+    android:id="@+id/drawer_layout">
+<!--    tools:openDrawer="start">-->
 
     <androidx.appcompat.widget.LinearLayoutCompat android:layout_height="match_parent" android:layout_width="match_parent">
 
@@ -45,11 +45,10 @@
                         android:id="@+id/apelidoDaPlanta"
                         android:layout_width="339dp"
                         android:layout_height="31dp"
-                        android:background="@drawable/circulo_drawable"
                         android:paddingTop="5sp"
                         android:textAlignment="center"
                         android:textColor="#000000"
-                        android:textSize="20sp"
+                        android:textSize="24sp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
@@ -63,7 +62,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/sanchez"
-                    android:textColor="#000000"
+                    android:textAlignment="textStart"
+                    android:textColor="#757575"
                     android:textSize="18sp" />
 
                 <androidx.constraintlayout.widget.ConstraintLayout
@@ -79,7 +79,7 @@
                         app:layout_constraintHorizontal_bias="0.75"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintVertical_bias="0.25"
+                        app:layout_constraintVertical_bias="0.315"
                         app:srcCompat="@drawable/btn_editar" />
 
                     <ImageView
@@ -89,10 +89,10 @@
                         android:onClick="abrirTelaGaleria"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.976"
+                        app:layout_constraintHorizontal_bias="0.891"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintVertical_bias="0.695"
+                        app:layout_constraintVertical_bias="0.734"
                         app:srcCompat="@drawable/btn_galeria" />
 
                     <TextView
@@ -107,10 +107,10 @@
                         android:textSize="18sp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toStartOf="@+id/imageView5"
-                        app:layout_constraintHorizontal_bias="1.0"
+                        app:layout_constraintHorizontal_bias="0.84"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintVertical_bias="0.66" />
+                        app:layout_constraintVertical_bias="0.704" />
 
                     <ImageView
                         android:id="@+id/imageView9"
@@ -118,9 +118,10 @@
                         android:layout_height="49dp"
                         app:layout_constraintBottom_toTopOf="@+id/textView9"
                         app:layout_constraintEnd_toStartOf="@+id/imageView6"
+                        app:layout_constraintHorizontal_bias="1.0"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintVertical_bias="0.285"
+                        app:layout_constraintVertical_bias="0.444"
                         app:srcCompat="@drawable/btn_excluir" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
@@ -174,33 +175,33 @@
                 <ImageButton
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="0.85"
+                    android:layout_weight="1.0"
                     android:background="?attr/selectableItemBackgroundBorderless"
                     app:srcCompat="@drawable/ic_perfil" />
 
                 <ImageButton
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="0.85"
+                    android:layout_weight="0.9"
                     android:background="@android:color/transparent" />
 
                 <ImageButton
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="0.85"
+                    android:layout_weight="1.0"
                     android:background="?attr/selectableItemBackgroundBorderless"
                     app:srcCompat="@drawable/ic_amigos" />
 
                 <ImageButton
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="0.85"
+                    android:layout_weight="0.9"
                     android:background="@android:color/transparent" />
 
                 <ImageButton
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="0.85"
+                    android:layout_weight="1.0"
                     android:background="?attr/selectableItemBackgroundBorderless"
                     app:srcCompat="@drawable/ic_plantas" />
                 <!-- Se quiser trocar a cor do botão depois é só usar esse comando: -->

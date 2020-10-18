@@ -32,6 +32,7 @@
             android:fontFamily="@font/sanchez"
             android:text="Você ainda não registrou nenhuma plantinha :( \n\n Vamos começar?!"
             android:textAlignment="center"
+            android:textColor="#757575"
             android:textSize="24sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.493"
