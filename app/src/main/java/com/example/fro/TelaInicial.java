@@ -68,7 +68,7 @@ public class TelaInicial extends AppCompatActivity implements NavigationView.OnN
     }
 
     public void abrirTelaCadastroPlanta(View view){
-        Intent intent = new Intent(this, CadastroPlanta.class);
+        Intent intent = new Intent(this, TipoCadastroPlanta.class);
         startActivity(intent);
     }
 

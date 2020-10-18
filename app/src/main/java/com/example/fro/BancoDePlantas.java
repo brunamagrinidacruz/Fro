@@ -36,7 +36,7 @@ public class BancoDePlantas {
         samambaia.setPoda("O ideal é fazer uma vez por ano. Já os galhos secos ou mortes e partes doentes da planta podem ser removido antes.");
         samambaia.setTempoDeVida("Cerca de 2 anos.");
         samambaia.setPreco("Aproximadamente R$40,00.");
-        samambaia.setUrlImagemPadrao("https://img.elo7.com.br/product/original/2FC53B2/4-samambaia-artificial-em-silicone-grande-plantas-artificiais-25-de-marco.jpg");
+        samambaia.setUrlImagemPadrao("samambaia");
         bancoDePlantas.put("sword fern", samambaia);
         bancoDePlantas.put("boston fern", samambaia);
         bancoDePlantas.put("boston swordfern", samambaia);
@@ -56,7 +56,7 @@ public class BancoDePlantas {
         lancaSaoJorge.setTempoDeVida("Ela dura entre um e três anos.");
         lancaSaoJorge.setPreco("Aproximadamente R$ 25,00 a muda.");
         lancaSaoJorge.setOutrasInformacoes("A Lança-de-São-Jorge recebeu este nome porque suas folhagens são pontudas e compridas. Elas podem ser retas ou trançadas, com uma enrolada na outra. Para muita gente, a planta traz proteção ao lar.");
-        lancaSaoJorge.setUrlImagemPadrao("https://images.tcdn.com.br/img/img_prod/674984/planta_lanca_de_sao_jorge_reta_pequena_33877135_1_20200222000641.jpg");
+        lancaSaoJorge.setUrlImagemPadrao("lanca_sao_jorge");
         bancoDePlantas.put("sword barbara saint", lancaSaoJorge);
         bancoDePlantas.put("snake plant", lancaSaoJorge);
         bancoDePlantas.put("dracaena trifasciata", lancaSaoJorge);
@@ -76,7 +76,7 @@ public class BancoDePlantas {
         zamioculca.setTempoDeVida("Possui ciclo de vida perene, ou seja, é longo (pode durar mais de dois anos) e suas folhas não caem.");
         zamioculca.setPreco("Preço em torno de R$ 90,00.");
         zamioculca.setOutrasInformacoes("Por ter semelhança com a espécie zâmia, a planta deu origem ao nome científico Zamioculca. Mas, ao longo dos anos, ela acabou recebendo outros nomes por conta das crenças populares e das linhas do Feng Shui que a relaciona ao sucesso financeiro. Esse motivo a tornou conhecida também como árvore de dinheiro, em relação principalmente ao seu tom esverdeado. Uma curiosidade relevante dessa planta é que ela também serve para atrair proteção e sorte, sendo altamente indicada para colocar na entrada dos espaços.");
-        zamioculca.setUrlImagemPadrao("https://casaefesta.com/wp-content/uploads/2020/02/zamioculca-38.jpg");
+        zamioculca.setUrlImagemPadrao("zamioculca");
         bancoDePlantas.put("zz plant", zamioculca);
         bancoDePlantas.put("zanzibar gem", zamioculca);
         bancoDePlantas.put("zamioculcas", zamioculca);
@@ -96,7 +96,7 @@ public class BancoDePlantas {
         palmeiraRafia.setTempoDeVida("Possui ciclo de vida perene, ou seja, é longo (pode durar mais de dois anos) e suas folhas não caem.");
         palmeiraRafia.setPreco("Preço médio em torno de R$10. Preço encarecido apenas pelo tipo de vaso.");
         palmeiraRafia.setOutrasInformacoes("É uma linda planta originária da China que chama a atenção pelos troncos finos, pelas fibras espessas e pelas folhas verdes grandes e suntuosas. O uso mais comum da palmeira ráfia é como adorno para decoração de interiores, sobretudo para compor cômodos e ambientes com grandes espaços.");
-        palmeiraRafia.setUrlImagemPadrao("https://static3.tcdn.com.br/img/img_prod/450860/muda_da_palmeira_rafia_rhapis_excelsa_102_1_20190611093929.jpg");
+        palmeiraRafia.setUrlImagemPadrao("palmeira_rafia");
         bancoDePlantas.put("parlour palm", palmeiraRafia);
         bancoDePlantas.put("neanthe bella palm", palmeiraRafia);
         bancoDePlantas.put("golden butterfly palm", palmeiraRafia);
@@ -115,13 +115,13 @@ public class BancoDePlantas {
         paudAgua.setTempoDeVida("Possui ciclo de vida perene, ou seja, é longo (pode durar mais de dois anos) e suas folhas não caem.");
         paudAgua.setPreco("Preço em torno de R$ 40,00.");
         paudAgua.setOutrasInformacoes("Estudos da NASA comprovaram que ela contribui para eliminar produtos como formaldeído, xileno e tolueno do ar.");
-        paudAgua.setUrlImagemPadrao("https://www.paulistaflores.com.br/image/cache/data/produtos/plantadas/plso01---planta-da-sorte---dracena-pau-d039agua-/dracena-pau-dagua-1-926x926.jpg");
+        paudAgua.setUrlImagemPadrao("pau_de_agua");
         bancoDePlantas.put("fragrant dracaena", paudAgua);
         bancoDePlantas.put("cornstalk dracaena", paudAgua);
         bancoDePlantas.put("happy plant", paudAgua);
 
         Planta palmeiraLeque = new Planta();
-        palmeiraLeque.setNome("Palmeira Leque.");
+        palmeiraLeque.setNome("Palmeira Leque");
         palmeiraLeque.setComoPlantar ("Fazer mistura de substratos com composto orgânico e elementos particulados como pó de coco e areia grossa. Adicionar cerca de 200 gramas de adubo NPK formulação 10-10-10, misturando bem. Para plantas de cultivo em interiores não devemos usar adubo animal para evitar odores. Proteger o fundo com geomanta, colocar brita ou cascalho no fundo e um pouco de areia úmida. Este procedimento facilita a saída da água de rega. Colocar parte do substrato no fundo, colocar o torrão e preencher as laterais. Apertar de leve para compactar e manter a muda no lugar.");
         palmeiraLeque.setFrequenciaDeRegamento("Regar toda vez que sentir o substrato levemente seco. No inverno diminuir as regas.");
         palmeiraLeque.setLocalAdequadoParaPlantio("A palmeira de leque é uma planta de crescimento lento e que precisa de meia sombra para continuar crescendo saudável. O jardim de inverno, varandas e vasos são lugares excelentes para usar a palmeira de leque, mas lembre-se de sempre a posicionar em lugares iluminados. No entanto, a planta não pode ficar em ambientes com ar condicionado e nem com muito vento – isso prejudica o crescimento da planta palmeira de leque.");
@@ -132,7 +132,7 @@ public class BancoDePlantas {
         palmeiraLeque.setTempoDeVida("Possui ciclo de vida perene, ou seja, é longo (pode durar mais de dois anos) e suas folhas não caem.");
         palmeiraLeque.setPreco("Preço em torno de R$50 a R$90.");
         palmeiraLeque.setOutrasInformacoes("Ela chama atenção, no entanto, por suas folhas tão singulares. Elas são grandes, redondas a triangulares, coriáceas, de cor verde-brilhante, plissadas e com margem denteada. Estas folhas são sustentadas por pecíolos fortes, longos e espinhentos. Apenas os indivíduos já com tamanho considerável de tronco florescem e frutificam. As flores são de cor creme, diminutas e surgem em inflorescências ramificadas que despontam em longos cachos. Os frutos são vermelho-alaranjados, esféricos e bastante decorativos. Ocorre ainda uma forma variegada da planta com belas folhas listradas de branco.");
-        palmeiraLeque.setUrlImagemPadrao("https://nativegarden.com.br/wp-content/uploads/2017/02/Licuala.png");
+        palmeiraLeque.setUrlImagemPadrao("palmeira_leque");
         bancoDePlantas.put("mexican fan palm", palmeiraLeque);
         bancoDePlantas.put("mexican washingtonia", palmeiraLeque);
         bancoDePlantas.put("chinese fan palm", palmeiraLeque);
@@ -150,7 +150,7 @@ public class BancoDePlantas {
         anturio.setTempoDeVida("Possui ciclo de vida perene, ou seja, é longo (pode durar mais de dois anos) e suas folhas não caem.");
         anturio.setPreco("Preço em torno de R$30.");
         anturio.setOutrasInformacoes("O antúrio é uma planta tóxica, por isso mantenha-o longe de crianças e animais domésticos. Ao manipular a planta também é recomendado utilizar luvas para evitar irritações na pele. Existem no mundo nada mais, nada menos do que 600 espécies diferentes de antúrios. Aqui no Brasil, a mais conhecida é a vermelha, mas existem ainda antúrios com “flores” brancas, rosas, salmão e marrom.");
-        anturio.setUrlImagemPadrao("https://cdn.leroymerlin.com.br/products/_anturio_pote_12_89203793_0001_600x600.jpg");
+        anturio.setUrlImagemPadrao("anturio");
         bancoDePlantas.put("tail flower", anturio);
         bancoDePlantas.put("tailflower", anturio);
         bancoDePlantas.put("flamingo flower", anturio);
@@ -169,7 +169,7 @@ public class BancoDePlantas {
         jiboia.setTempoDeVida("Possui ciclo de vida perene, ou seja, é longo (pode durar mais de dois anos) e suas folhas não caem.");
         jiboia.setPreco("Preço em torno de R$20.");
         jiboia.setOutrasInformacoes("a jiboia apresenta folhagens brilhantes e atrativas, e é considerada por muitos uma planta protetora e sagrada. Antes de aprender como cuidar da planta jiboia, fique atento: ela é tóxica e pode apresentar perigo às crianças e animais de estimação, caso seja ingerida. Por isso, deixe-a fora do alcance dos pets e dos pequenos.");
-        jiboia.setUrlImagemPadrao("https://cdn.awsli.com.br/600x450/1129/1129984/produto/50624719/dbf35d82d5.jpg");
+        jiboia.setUrlImagemPadrao("jiboia");
         bancoDePlantas.put("centipede tongavine", jiboia);
         bancoDePlantas.put("dragon-tail plant", jiboia);
         bancoDePlantas.put("tibatib", jiboia);
@@ -187,7 +187,7 @@ public class BancoDePlantas {
         singonio.setTempoDeVida("Possui ciclo de vida perene, ou seja, é longo (pode durar mais de dois anos) e suas folhas não caem.");
         singonio.setPreco("Preço em torno de R$20.");
         singonio.setOutrasInformacoes("Antes de aprender como cuidar da planta jiboia, fique atento: ela é tóxica e pode apresentar perigo às crianças e animais de estimação, caso seja ingerida. Por isso, deixe-a fora do alcance dos pets e dos pequenos.");
-        singonio.setUrlImagemPadrao("https://selvvva.com/wp-content/uploads/2020/08/singonio.jpg");
+        singonio.setUrlImagemPadrao("singonio");
         bancoDePlantas.put("american evergreen", singonio);
         bancoDePlantas.put("arrowhead vine", singonio);
         bancoDePlantas.put("arrowhead plant", singonio);
@@ -207,7 +207,7 @@ public class BancoDePlantas {
         pacova.setTempoDeVida("Possui ciclo de vida perene, ou seja, é longo (pode durar mais de dois anos) e suas folhas não caem.");
         pacova.setPreco("Preço em torno de R$30,00.");
         pacova.setOutrasInformacoes("A planta pacová (nome científico Philodendron martianum), também conhecida como filodendro martiniano, babosa-de-árvore ou babosa-de-pau é uma espécie nativa do Brasil, mais especificamente da Mata Atlântica.");
-        pacova.setUrlImagemPadrao("https://cdn.awsli.com.br/600x450/41/41127/produto/7378534/9b6b0c8e8a.jpg");
+        pacova.setUrlImagemPadrao("pacova");
         bancoDePlantas.put("natal wild banana", pacova);
         bancoDePlantas.put("giant white bird of paradise", pacova);
         bancoDePlantas.put("wild banana", pacova);

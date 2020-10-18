@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.provider.MediaStore;
@@ -34,15 +35,55 @@ public class CadastroPlanta extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Intent intent = getIntent();
         setContentView(R.layout.activity_cadastro_planta);
-        reconhecimentoDePlanta();
+        int tipo = (int) intent.getSerializableExtra("tipo");
+        if(tipo == 1) { /*!< Reconhecimento */
+            reconhecimentoDePlanta();
+        } else { /*!< Manual */
+            reconhecimentoManual();
+        }
     }
 
     static final int REQUEST_IMAGE_CAPTURE = 1;
-    public void reconhecimentoDePlanta() {
+    private void reconhecimentoDePlanta() {
         Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
         if (takePictureIntent.resolveActivity(getPackageManager()) != null) {
             startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE);
+        }
+    }
+
+    private void reconhecimentoManual() {
+        try {
+            Spinner tipoPlantaSpinner = (Spinner) findViewById(R.id.tipoPlantaSpinner);
+            BancoDePlantas bancoDePlantas = new BancoDePlantas();
+
+            tipoPlantaSpinner.setVisibility(View.VISIBLE);
+
+            /*!< Criando Spinner */
+            ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, bancoDePlantas.getNomesPlantas());
+            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+            tipoPlantaSpinner.setAdapter(adapter);
+
+            /*!< Quando o usuário atualiza a lista de tipos de plantas, irá atualizar a imagem apresentada. A imagem sera uma padrao para cada planta localizada em /drawable */
+            tipoPlantaSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                @Override
+                public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
+                    String uri = "@drawable/" + bancoDePlantas.getUrlPlantas().get(position);
+                    int imageResource = getResources().getIdentifier(uri, null, getPackageName()); /*!< Pegando o resource da imagem */
+                    Drawable res = getResources().getDrawable(imageResource);
+                    ImageView fotoDaPlanta = findViewById(R.id.fotoDaPlanta);
+                    /*!< Atualizando imagem no ImageView */
+                    fotoDaPlanta.setImageDrawable(res);
+                }
+
+                @Override
+                public void onNothingSelected(AdapterView<?> adapterView) {
+                }
+
+            });
+        } catch (JSONException e) {
+            e.printStackTrace();
         }
     }
 
@@ -81,8 +122,6 @@ public class CadastroPlanta extends AppCompatActivity {
                 Spinner tipoPlantaSpinner = (Spinner) findViewById(R.id.tipoPlantaSpinner);
                 tipoPlantaSpinner.setVisibility(View.INVISIBLE);
 
-                BancoDePlantas bancoDePlantas = new BancoDePlantas();
-
                 /*!< Probabilidade da API acertar deve ser maior que 30% */
                 double probabilidade = primeiraSugestao.getDouble("probability");
                 if(probabilidade >= 0.3) { /*!< Utiliza a informação da API */
@@ -93,6 +132,7 @@ public class CadastroPlanta extends AppCompatActivity {
                     JSONArray nomesComunsDaPrimeiraSugestao = detalhesDaPrimeiraSugestao.getJSONArray("common_names");
 
                     /*!< Identificando a planta */
+                    BancoDePlantas bancoDePlantas = new BancoDePlantas();
                     Planta planta = bancoDePlantas.identificarPlanta(nomesComunsDaPrimeiraSugestao);
 
                     /*!< Configurando coisas da tela */
@@ -100,26 +140,7 @@ public class CadastroPlanta extends AppCompatActivity {
                     tipoPlantaTexto.setVisibility(View.VISIBLE);
                     tipoPlantaTexto.setText("Nome: " + planta.getNome());
                 } else { /*!< Como não achou na API, habilita o Spinner para seleção manual */
-                    tipoPlantaSpinner.setVisibility(View.VISIBLE);
-
-                    /*!< Criando Spinner */
-                    ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, bancoDePlantas.getNomesPlantas());
-                    adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-                    tipoPlantaSpinner.setAdapter(adapter);
-
-                    /*!< Quando o usuário atualiza a lista de tipos de plantas, irá atualizar a imagem apresentada */
-                    tipoPlantaSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-                        @Override
-                        public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
-                            new DownloadImageTask((ImageView) findViewById(R.id.fotoDaPlanta))
-                                    .execute(bancoDePlantas.getUrlPlantas().get(position));
-                        }
-
-                        @Override
-                        public void onNothingSelected(AdapterView<?> adapterView) {
-
-                        }
-                    });
+                    reconhecimentoManual();
                 }
             } catch (ExecutionException e) {
                 e.printStackTrace();
@@ -130,10 +151,13 @@ public class CadastroPlanta extends AppCompatActivity {
             }
 
         } else { /*!< Foto não capturada com sucesso*/
-
+            /*!< Abrir tela de selecao de tipo de cadastro de planta (reconhecimento ou manual) */
+            Intent intent = new Intent(this, TipoCadastroPlanta.class);
+            startActivity(intent);
         }
 
     }
+
 
     /*!< Funcao responsavel por baixar imagem do usuario */
     private class DownloadImageTask extends AsyncTask<String, Void, Bitmap> {
