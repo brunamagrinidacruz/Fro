@@ -16,7 +16,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Frô">
-        <activity android:name=".TelaGaleriaPlanta"></activity>
+        <activity android:name=".TelaConquistas"></activity>
+        <activity android:name=".TelaPerfil" />
+        <activity android:name=".TelaGaleriaPlanta" />
         <activity android:name=".DescricaoPlanta" />
         <activity android:name=".TipoCadastroPlanta" />
         <activity android:name=".CadastroPlanta" />
