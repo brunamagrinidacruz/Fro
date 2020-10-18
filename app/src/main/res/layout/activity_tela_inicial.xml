@@ -8,8 +8,8 @@
     android:layout_height="match_parent"
     tools:context=".TelaInicial"
     android:id="@+id/drawer_layout"
-    android:fitsSystemWindows="true"
-    tools:openDrawer="start">
+    android:fitsSystemWindows="true">
+<!--    tools:openDrawer="start">-->
 
     <com.google.android.material.navigation.NavigationView
         android:layout_width="wrap_content"
@@ -19,13 +19,35 @@
         app:menu="@menu/main_menu"
         android:layout_gravity="start"/>
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
-
     <androidx.constraintlayout.widget.ConstraintLayout android:layout_height="match_parent" android:layout_width="match_parent">
+
         <include layout="@layout/toolbar"
             android:id="@+id/customToolbar"/>
+
+        <TextView
+            android:id="@+id/textView11"
+            android:layout_width="330dp"
+            android:layout_height="122dp"
+            android:layout_marginTop="248dp"
+            android:fontFamily="@font/sanchez"
+            android:text="Você ainda não registrou nenhuma plantinha :( \n\n Vamos começar?!"
+            android:textAlignment="center"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.493"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/customToolbar" />
+
+        <ImageView
+            android:id="@+id/imageView11"
+            android:layout_width="148dp"
+            android:layout_height="176dp"
+            android:layout_marginTop="36dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.779"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView11"
+            app:srcCompat="@drawable/imgseta" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
