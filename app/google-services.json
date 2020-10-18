@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "747160542489",
+    "firebase_url": "https://appfro-54294.firebaseio.com",
+    "project_id": "appfro-54294",
+    "storage_bucket": "appfro-54294.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:747160542489:android:a54e3131353a193d0cb988",
+        "android_client_info": {
+          "package_name": "com.example.fro"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "747160542489-c535f38tfv0k0taq2ob7st3f6de2thn1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCQScZwCC-oKhPiCtVi13D0r_y4oWILaac"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "747160542489-c535f38tfv0k0taq2ob7st3f6de2thn1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

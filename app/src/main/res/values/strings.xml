@@ -27,4 +27,6 @@
     <string name="txtAddPlanta">Adicionar planta</string>
     <string name="txtMinhasPlantas">Minhas plantas</string>
     <string name="txtGaleria">Galeria</string>
+    <string name="txtLoginEntrar">entrar</string>
+    <string name="txtForgPass">esqueci minha senha</string>
 </resources>
