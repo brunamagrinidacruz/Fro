@@ -7,10 +7,14 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.MenuItem;
 import android.view.WindowManager;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.google.android.material.navigation.NavigationView;
@@ -42,13 +46,32 @@ public class DescricaoPlanta extends AppCompatActivity {
 
         /*!< Pegando informações da planta*/
         Intent intent = getIntent();
-        String nomePlanta = (String) intent.getSerializableExtra("planta");
+        String keyPlanta = (String) intent.getSerializableExtra("plantaKey");
+        String plantaApelido = (String) intent.getSerializableExtra("plantaApelido");
+        byte[] plantaImagemByte = intent.getByteArrayExtra("plantaImagem");
+
+        /*!< Buscando planta */
         BancoDePlantas bancoDePlantas = new BancoDePlantas();
-        planta = bancoDePlantas.getPlantaPorNome(nomePlanta);
+        planta = bancoDePlantas.getPlantaPorKey(keyPlanta);
+
+        /*!< Verificando se há imagem ou colocar a padrao */
+        ImageView fotoDaPlanta = findViewById(R.id.imagemPlanta);
+        if(plantaImagemByte != null){
+            Bitmap bmp = BitmapFactory.decodeByteArray(plantaImagemByte, 0, plantaImagemByte.length);
+            fotoDaPlanta.setImageBitmap(bmp);
+        } else {
+            String uri = "@drawable/" + planta.getUrlImagemPadrao();
+            int imageResource = getResources().getIdentifier(uri, null, getPackageName()); /*!< Pegando o resource da imagem */
+            Drawable res = getResources().getDrawable(imageResource);
+            /*!< Atualizando imagem no ImageView */
+            fotoDaPlanta.setImageDrawable(res);
+        }
 
         /*!< Colocando informacoes da planta na tela */
         TextView descricaoPlanta = findViewById(R.id.descricaoPlanta);
         descricaoPlanta.setText(planta.toString());
+        TextView apelidoDaPlanta = findViewById(R.id.apelidoDaPlanta);
+        apelidoDaPlanta.setText(plantaApelido);
     }
 
     private boolean onNavigationItemSelected(MenuItem menuItem) {

@@ -4,6 +4,8 @@ import java.util.Arrays;
 
 public class Planta {
     /*!< Identificadores da planta */
+    private String id; /*!< Representa a key do Map */
+    private String apelido;
     private String nome; /*E o nome bonito da planta que sera mostrado, tipo "Sambaia" ou "Palmeira Rafia"*/
 
     /*!< Informacoes sobre cuidados da planta */
@@ -116,6 +118,22 @@ public class Planta {
 
     public void setUrlImagemPadrao(String urlImagemPadrao) {
         this.urlImagemPadrao = urlImagemPadrao;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getApelido() {
+        return apelido;
+    }
+
+    public void setApelido(String apelido) {
+        this.apelido = apelido;
     }
 
     @Override

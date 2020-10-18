@@ -24,6 +24,7 @@ public class BancoDePlantas {
 
     private List<String> nomesPlantas = new ArrayList<String>(); /*!< Lista com os nomes apresentaveis das plantas (para o Spinner) */
     private List<String> urlPlantas = new ArrayList<String>(); /*!< Lista com os url das plantas (para o ImageView) */
+    private List<String> keysPlantas = new ArrayList<>(); /*!< Lista de chaves para recuperação da planta pela tela DescricaoPlanta */
 
     public BancoDePlantas()  {
         /*!< Mock */
@@ -217,6 +218,7 @@ public class BancoDePlantas {
                 if(!nomesPlantas.contains(planta.getNome())) {
                     nomesPlantas.add(planta.getNome());
                     urlPlantas.add(planta.getUrlImagemPadrao());
+                    keysPlantas.add(key);
                 }
             });
         } else {
@@ -233,7 +235,10 @@ public class BancoDePlantas {
             nomeComum = (Normalizer.normalize(nomesComuns.getString(i), Normalizer.Form.NFD).replaceAll("[^\\p{ASCII}]", "")).toLowerCase();
             /*!< Procurando se o nome comum possui alguma planta relacionada no banco de plantas */
             planta = bancoDePlantas.get(nomeComum);
-            if(planta != null) break;
+            if(planta != null) {
+                planta.setId(nomeComum);
+                break;
+            }
         }
         return planta;
     }
@@ -246,16 +251,11 @@ public class BancoDePlantas {
         return this.urlPlantas;
     }
 
-    public Planta getPlantaPorNome(String nome) {
-        return bancoDePlantas.get("american evergreen");
-//        Planta planta = null;
-//        Iterator iterator = bancoDePlantas.entrySet().iterator();
-//        while(iterator.hasNext()) {
-//            planta = (Planta) iterator.next();
-//            if(planta.getNome().equals(nome))
-//                return planta;
-//        }
-//        return planta;
+    public List<String> getKeysPlantas() {
+        return this.keysPlantas;
     }
 
+    public Planta getPlantaPorKey(String keyPlanta) {
+        return bancoDePlantas.get(keyPlanta);
+    }
 }

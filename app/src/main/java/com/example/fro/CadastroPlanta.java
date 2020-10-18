@@ -44,6 +44,11 @@ public class CadastroPlanta extends AppCompatActivity {
     DrawerLayout drawerLayout;
     NavigationView navigationView;
 
+    private String nomeDaPlanta;
+    private String urlDaPlanta;
+    private String keyDaPlanta;
+    private Bitmap imagemPlanta;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -109,7 +114,10 @@ public class CadastroPlanta extends AppCompatActivity {
         tipoPlantaSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
-                String uri = "@drawable/" + bancoDePlantas.getUrlPlantas().get(position);
+                nomeDaPlanta = bancoDePlantas.getNomesPlantas().get(position);
+                urlDaPlanta = bancoDePlantas.getUrlPlantas().get(position);
+                keyDaPlanta = bancoDePlantas.getKeysPlantas().get(position);
+                String uri = "@drawable/" + urlDaPlanta;
                 int imageResource = getResources().getIdentifier(uri, null, getPackageName()); /*!< Pegando o resource da imagem */
                 Drawable res = getResources().getDrawable(imageResource);
                 ImageView fotoDaPlanta = findViewById(R.id.fotoDaPlanta);
@@ -173,9 +181,12 @@ public class CadastroPlanta extends AppCompatActivity {
                     Planta planta = bancoDePlantas.identificarPlanta(nomesComunsDaPrimeiraSugestao);
 
                     /*!< Configurando coisas da tela */
+                    imagemPlanta = imageBitmap;
                     fotoDaPlanta.setImageBitmap(imageBitmap);
                     tipoPlantaTexto.setVisibility(View.VISIBLE);
-                    tipoPlantaTexto.setText("Nome: " + planta.getNome());
+                    keyDaPlanta = planta.getId();
+                    nomeDaPlanta = planta.getNome();
+                    tipoPlantaTexto.setText("Nome: " + nomeDaPlanta);
                 } else { /*!< Como não achou na API, habilita o Spinner para seleção manual */
                     reconhecimentoManual();
                 }
@@ -204,12 +215,21 @@ public class CadastroPlanta extends AppCompatActivity {
             Snackbar mySnackbar = Snackbar.make(view, "A plantinha deve ter um nome de até 20 caracteres.", Snackbar.LENGTH_LONG);
             mySnackbar.show();
         } else {
-            System.out.println("Abrindo nova página");
             /*!< Cadastrar plantinha no banco de dados */
 
             /*!< Abrir tela da plantinha passando a plantinha correspondente */
             Intent intent = new Intent(this, DescricaoPlanta.class);
-            intent.putExtra("planta", "Samambaia");
+            intent.putExtra("plantaApelido", apelidoPlanta.getText().toString());
+            intent.putExtra("plantaKey", keyDaPlanta);
+
+            /*!< Convertendo a imagem para byte e passando para proxima tela */
+            if(imagemPlanta != null) {
+                ByteArrayOutputStream stream = new ByteArrayOutputStream();
+                imagemPlanta.compress(Bitmap.CompressFormat.PNG, 100, stream);
+                byte[] imagemPlantaByte = stream.toByteArray();
+                intent.putExtra("plantaImagem", imagemPlantaByte);
+            }
+
             startActivity(intent);
         }
     }
