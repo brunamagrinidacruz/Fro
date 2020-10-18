@@ -47,33 +47,33 @@
                 <ImageButton
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="0.85"
+                    android:layout_weight="1.0"
                     android:background="?attr/selectableItemBackgroundBorderless"
                     app:srcCompat="@drawable/ic_perfil" />
 
                 <ImageButton
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="0.85"
+                    android:layout_weight="0.9"
                     android:background="@android:color/transparent" />
 
                 <ImageButton
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="0.85"
+                    android:layout_weight="1.0"
                     android:background="?attr/selectableItemBackgroundBorderless"
                     app:srcCompat="@drawable/ic_amigos" />
 
                 <ImageButton
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="0.85"
+                    android:layout_weight="0.9"
                     android:background="@android:color/transparent" />
 
                 <ImageButton
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="0.85"
+                    android:layout_weight="1.0"
                     android:background="?attr/selectableItemBackgroundBorderless"
                     app:srcCompat="@drawable/ic_plantas" />
                 <!-- Se quiser trocar a cor do botão depois é só usar esse comando: -->
