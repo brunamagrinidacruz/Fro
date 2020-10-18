@@ -13,7 +13,7 @@ import android.view.View;
 
 import com.google.android.material.navigation.NavigationView;
 
-public class TelaPerfil extends AppCompatActivity {
+public class TelaNotificacoes extends AppCompatActivity {
 
     DrawerLayout drawerLayout;
     NavigationView navigationView;
@@ -21,7 +21,7 @@ public class TelaPerfil extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_tela_perfil);
+        setContentView(R.layout.activity_tela_notificacoes);
         /*!< Menu inferior e lateral */
         Toolbar toolbar = findViewById(R.id.customToolbar);
         setSupportActionBar(toolbar);

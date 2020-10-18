@@ -276,6 +276,7 @@ public class CadastroPlanta extends AppCompatActivity {
             Intent intent = new Intent(this, DescricaoPlanta.class);
             intent.putExtra("plantaApelido", apelidoPlanta.getText().toString());
             intent.putExtra("plantaKey", keyDaPlanta);
+            intent.putExtra("veioDoCadastro", "sim");
 
             /*!< Convertendo a imagem para byte e passando para proxima tela */
             if(imagemPlanta != null) {

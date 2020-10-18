@@ -6,14 +6,12 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.view.View;
 
 import com.google.android.material.navigation.NavigationView;
 
-public class TelaPerfil extends AppCompatActivity {
+public class TelaDoacoes extends AppCompatActivity {
 
     DrawerLayout drawerLayout;
     NavigationView navigationView;
@@ -21,7 +19,7 @@ public class TelaPerfil extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_tela_perfil);
+        setContentView(R.layout.activity_tela_doacoes);
         /*!< Menu inferior e lateral */
         Toolbar toolbar = findViewById(R.id.customToolbar);
         setSupportActionBar(toolbar);
@@ -47,10 +45,5 @@ public class TelaPerfil extends AppCompatActivity {
         else{
             super.onBackPressed();
         }
-    }
-
-    public void abrirTelaConquistas(View view){
-        Intent intent = new Intent(this, TelaConquistas.class);
-        startActivity(intent);
     }
 }
