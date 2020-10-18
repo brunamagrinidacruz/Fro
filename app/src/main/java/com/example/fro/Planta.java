@@ -7,6 +7,7 @@ public class Planta {
     private String nome; /*E o nome bonito da planta que sera mostrado, tipo "Sambaia" ou "Palmeira Rafia"*/
 
     /*!< Informacoes sobre cuidados da planta */
+    private String comoPlantar;
     private String frequenciaDeRegamento;
     private String localAdequadoParaPlantio; /*!< Se deve ficar mais no sol ou nem tanto */
     private String poda;
@@ -19,12 +20,22 @@ public class Planta {
     private String preco;
     private String outrasInformacoes;
 
+    private String urlImagemPadrao;
+
     public String getNome() {
         return nome;
     }
 
     public void setNome(String nome) {
         this.nome = nome;
+    }
+
+    public String getComoPlantar() {
+        return comoPlantar;
+    }
+
+    public void setComoPlantar(String comoPlantar) {
+        this.comoPlantar = comoPlantar;
     }
 
     public String getFrequenciaDeRegamento() {
@@ -97,6 +108,14 @@ public class Planta {
 
     public void setPoda(String poda) {
         this.poda = poda;
+    }
+
+    public String getUrlImagemPadrao() {
+        return urlImagemPadrao;
+    }
+
+    public void setUrlImagemPadrao(String urlImagemPadrao) {
+        this.urlImagemPadrao = urlImagemPadrao;
     }
 
     @Override

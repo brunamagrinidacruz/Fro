@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CadastroPlanta"
+    tools:context=".TipoCadastroPlanta"
     android:id="@+id/drawer_layout"
     android:fitsSystemWindows="true"
     tools:openDrawer="start">
@@ -25,7 +25,7 @@
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:context=".CadastroPlanta">
+        tools:context=".TipoCadastroPlanta">
 
         <com.google.android.material.bottomappbar.BottomAppBar
             android:id="@+id/bottomAppBar"
@@ -76,17 +76,13 @@
                     android:layout_weight="0.85"
                     android:background="?attr/selectableItemBackgroundBorderless"
                     app:srcCompat="@drawable/ic_plantas" />
+                <!-- Se quiser trocar a cor do botão depois é só usar esse comando: -->
+                <!-- app:tint="@color/black" -->
             </LinearLayout>
         </com.google.android.material.bottomappbar.BottomAppBar>
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
-<!--<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
-<!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
-<!--    xmlns:tools="http://schemas.android.com/tools"-->
-<!--    android:layout_width="match_parent"-->
-<!--    android:layout_height="match_parent"-->
-<!--    tools:context=".CadastroPlanta">-->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -96,115 +92,76 @@
             layout="@layout/toolbar" />
 
         <TextView
-            android:id="@+id/textView6"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:id="@+id/textView4"
+            android:layout_width="230dp"
+            android:layout_height="57dp"
             android:fontFamily="@font/sanchez"
-            android:text="Foto"
+            android:text="reconhecimento automático"
             android:textColor="#000000"
-            android:textSize="24sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.101"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.395" />
-
-    <TextView
-        android:id="@+id/tipoPlantaTexto"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/sanchez"
-        android:textColor="#000000"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.141"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.172" />
-
-    <ImageView
-            android:id="@+id/fotoDaPlanta"
-            android:layout_width="335dp"
-            android:layout_height="245dp"
+            android:textSize="18sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.641"
-            app:srcCompat="@drawable/fro" />
-
-        <EditText
-            android:id="@+id/apelidoPlanta"
-            android:layout_width="329dp"
-            android:layout_height="50dp"
-            android:ems="10"
-            android:fontFamily="@font/sanchez"
-            android:inputType="textPersonName"
-            android:textColor="#000000"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.536"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.315" />
+            app:layout_constraintVertical_bias="0.479" />
 
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/textView5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/sanchez"
-            android:text="Apelido"
+            android:text="manualmente"
             android:textColor="#000000"
-            android:textSize="24sp"
+            android:textSize="18sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.109"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.25" />
+            app:layout_constraintVertical_bias="0.814" />
 
-        <Spinner
-            android:id="@+id/tipoPlantaSpinner"
-            android:layout_width="340dp"
-            android:layout_height="48dp"
-            android:fontFamily="@font/sanchez"
+        <ImageButton
+            android:id="@+id/imageButton"
+            android:layout_width="158dp"
+            android:layout_height="144dp"
+            android:onClick="abrirTelaReconhecimentoAutomatico"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.521"
+            app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.156" />
+            app:layout_constraintVertical_bias="0.304"
+            app:srcCompat="@drawable/btnreconhecimentoautomatico" />
+
+        <ImageButton
+            android:id="@+id/imageButton2"
+            android:layout_width="106dp"
+            android:layout_height="131dp"
+            android:onClick="abrirTelaManual"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.71"
+            app:srcCompat="@drawable/btnmanualmente" />
 
         <TextView
-            android:id="@+id/textView3"
+            android:id="@+id/textView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/sanchez"
-            android:text="Tipo"
+            android:fontFamily="@font/roboto_light"
+            android:text="Registrar uma nova planta"
+            android:textAlignment="center"
             android:textColor="#000000"
-            android:textSize="24sp"
+            android:textSize="36sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.097"
+            app:layout_constraintHorizontal_bias="0.491"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.098" />
-
-        <ImageView
-            android:id="@+id/imageView2"
-            android:layout_width="274dp"
-            android:layout_height="60dp"
-            android:onClick="abrirTelaPlanta"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.496"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.859"
-            app:srcCompat="@drawable/btnsalvar" />
+            app:layout_constraintVertical_bias="0.095" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
 
 </androidx.drawerlayout.widget.DrawerLayout>
