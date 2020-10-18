@@ -25,7 +25,7 @@ public class BancoDePlantas {
     private List<String> nomesPlantas = new ArrayList<String>(); /*!< Lista com os nomes apresentaveis das plantas (para o Spinner) */
     private List<String> urlPlantas = new ArrayList<String>(); /*!< Lista com os url das plantas (para o ImageView) */
 
-    public BancoDePlantas() throws JSONException {
+    public BancoDePlantas()  {
         /*!< Mock */
 
         Planta samambaia = new Planta();
@@ -244,6 +244,18 @@ public class BancoDePlantas {
 
     public List<String> getUrlPlantas() {
         return this.urlPlantas;
+    }
+
+    public Planta getPlantaPorNome(String nome) {
+        return bancoDePlantas.get("american evergreen");
+//        Planta planta = null;
+//        Iterator iterator = bancoDePlantas.entrySet().iterator();
+//        while(iterator.hasNext()) {
+//            planta = (Planta) iterator.next();
+//            if(planta.getNome().equals(nome))
+//                return planta;
+//        }
+//        return planta;
     }
 
 }

@@ -16,7 +16,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Frô">
-        <activity android:name=".CadastroPlanta"></activity>
+
+        <activity android:name=".DescricaoPlanta"></activity>
+        <activity android:name=".TipoCadastroPlanta" />
+        <activity android:name=".CadastroPlanta" />
         <activity android:name=".MainActivity" />
         <activity android:name=".TelaInicial" />
         <activity android:name=".SplashScreen">
