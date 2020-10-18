@@ -13,6 +13,7 @@ import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.MenuItem;
+import android.view.View;
 import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -99,6 +100,10 @@ public class DescricaoPlanta extends AppCompatActivity {
         return super.onKeyDown(keyCode, event);
     }
 
+    public void abrirTelaGaleria(View view){
+        Intent intent = new Intent(this, TelaGaleriaPlanta.class);
+        startActivity(intent);
+    }
 
 
 }

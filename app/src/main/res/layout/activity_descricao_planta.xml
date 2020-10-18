@@ -86,6 +86,7 @@
                         android:id="@+id/imageView5"
                         android:layout_width="76dp"
                         android:layout_height="52dp"
+                        android:onClick="abrirTelaGaleria"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0.976"
@@ -140,7 +141,7 @@
             tools:layout_editor_absoluteY="51dp" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <com.google.android.material.navigation.NavigationView
+    <com.google.android.material.navigation.NavigationView
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:id="@+id/nav_view"
