@@ -95,37 +95,33 @@ public class CadastroPlanta extends AppCompatActivity {
     }
 
     private void reconhecimentoManual() {
-        try {
-            Spinner tipoPlantaSpinner = (Spinner) findViewById(R.id.tipoPlantaSpinner);
-            BancoDePlantas bancoDePlantas = new BancoDePlantas();
+        Spinner tipoPlantaSpinner = (Spinner) findViewById(R.id.tipoPlantaSpinner);
+        BancoDePlantas bancoDePlantas = new BancoDePlantas();
 
-            tipoPlantaSpinner.setVisibility(View.VISIBLE);
+        tipoPlantaSpinner.setVisibility(View.VISIBLE);
 
-            /*!< Criando Spinner */
-            ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, bancoDePlantas.getNomesPlantas());
-            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-            tipoPlantaSpinner.setAdapter(adapter);
+        /*!< Criando Spinner */
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, bancoDePlantas.getNomesPlantas());
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        tipoPlantaSpinner.setAdapter(adapter);
 
-            /*!< Quando o usuário atualiza a lista de tipos de plantas, irá atualizar a imagem apresentada. A imagem sera uma padrao para cada planta localizada em /drawable */
-            tipoPlantaSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-                @Override
-                public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
-                    String uri = "@drawable/" + bancoDePlantas.getUrlPlantas().get(position);
-                    int imageResource = getResources().getIdentifier(uri, null, getPackageName()); /*!< Pegando o resource da imagem */
-                    Drawable res = getResources().getDrawable(imageResource);
-                    ImageView fotoDaPlanta = findViewById(R.id.fotoDaPlanta);
-                    /*!< Atualizando imagem no ImageView */
-                    fotoDaPlanta.setImageDrawable(res);
-                }
+        /*!< Quando o usuário atualiza a lista de tipos de plantas, irá atualizar a imagem apresentada. A imagem sera uma padrao para cada planta localizada em /drawable */
+        tipoPlantaSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
+                String uri = "@drawable/" + bancoDePlantas.getUrlPlantas().get(position);
+                int imageResource = getResources().getIdentifier(uri, null, getPackageName()); /*!< Pegando o resource da imagem */
+                Drawable res = getResources().getDrawable(imageResource);
+                ImageView fotoDaPlanta = findViewById(R.id.fotoDaPlanta);
+                /*!< Atualizando imagem no ImageView */
+                fotoDaPlanta.setImageDrawable(res);
+            }
 
-                @Override
-                public void onNothingSelected(AdapterView<?> adapterView) {
-                }
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+            }
 
-            });
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
+        });
     }
 
     @Override
@@ -210,7 +206,11 @@ public class CadastroPlanta extends AppCompatActivity {
         } else {
             System.out.println("Abrindo nova página");
             /*!< Cadastrar plantinha no banco de dados */
+
             /*!< Abrir tela da plantinha passando a plantinha correspondente */
+            Intent intent = new Intent(this, DescricaoPlanta.class);
+            intent.putExtra("planta", "Samambaia");
+            startActivity(intent);
         }
     }
 
