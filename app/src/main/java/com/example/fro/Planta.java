@@ -139,16 +139,16 @@ public class Planta {
     @Override
     public String toString() {
         String informacoesPlanta = "";
-        if(comoPlantar != null || comoPlantar.equals("")) informacoesPlanta += "- Como plantar: " + comoPlantar + "\n";
-        if(frequenciaDeRegamento != null || frequenciaDeRegamento.equals("")) informacoesPlanta += "- Frequência de regamento: " + frequenciaDeRegamento + "\n";
-        if(localAdequadoParaPlantio != null || localAdequadoParaPlantio.equals("")) informacoesPlanta += "- Local para plantio: " + localAdequadoParaPlantio + "\n";
-        if(altura != null || altura.equals("")) informacoesPlanta += "- Altura: " + altura + "\n";
-        if(tempoDeVida != null || tempoDeVida.equals("")) informacoesPlanta += "- Tempo de vida: " + tempoDeVida + "\n";
-        if(poda != null || poda.equals("")) informacoesPlanta += "- Poda: " + poda + "\n";
-        if(fertilizantesRecomendados != null || fertilizantesRecomendados.equals("")) informacoesPlanta += "- Fertilizantes: " + fertilizantesRecomendados + "\n";
-        if(pragasComuns != null || pragasComuns.equals("")) informacoesPlanta += "- Pragas: " + pragasComuns + "\n";
-        if(preco != null || preco.equals("")) informacoesPlanta += "- Preço: " + preco + "\n";
-        if(outrasInformacoes != null || outrasInformacoes.equals("")) informacoesPlanta += "- Outras informações: " + outrasInformacoes + "\n";
+        if(comoPlantar != null && comoPlantar.equals("")) informacoesPlanta += "- Como plantar: " + comoPlantar + "\n";
+        if(frequenciaDeRegamento != null && !frequenciaDeRegamento.equals("")) informacoesPlanta += "- Frequência de regamento: " + frequenciaDeRegamento + "\n";
+        if(localAdequadoParaPlantio != null && !localAdequadoParaPlantio.equals("")) informacoesPlanta += "- Local para plantio: " + localAdequadoParaPlantio + "\n";
+        if(altura != null && !altura.equals("")) informacoesPlanta += "- Altura: " + altura + "\n";
+        if(tempoDeVida != null && !tempoDeVida.equals("")) informacoesPlanta += "- Tempo de vida: " + tempoDeVida + "\n";
+        if(poda != null && !poda.equals("")) informacoesPlanta += "- Poda: " + poda + "\n";
+        if(fertilizantesRecomendados != null && !fertilizantesRecomendados.equals("")) informacoesPlanta += "- Fertilizantes: " + fertilizantesRecomendados + "\n";
+        if(pragasComuns != null && !pragasComuns.equals("")) informacoesPlanta += "- Pragas: " + pragasComuns + "\n";
+        if(preco != null && !preco.equals("")) informacoesPlanta += "- Preço: " + preco + "\n";
+        if(outrasInformacoes != null && !outrasInformacoes.equals("")) informacoesPlanta += "- Outras informações: " + outrasInformacoes + "\n";
         return informacoesPlanta;
     }
 }

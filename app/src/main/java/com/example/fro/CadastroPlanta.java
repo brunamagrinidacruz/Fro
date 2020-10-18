@@ -186,7 +186,7 @@ public class CadastroPlanta extends AppCompatActivity {
                     tipoPlantaTexto.setVisibility(View.VISIBLE);
                     keyDaPlanta = planta.getId();
                     nomeDaPlanta = planta.getNome();
-                    tipoPlantaTexto.setText("Nome: " + nomeDaPlanta);
+                    tipoPlantaTexto.setText(nomeDaPlanta);
                 } else { /*!< Como não achou na API, habilita o Spinner para seleção manual */
                     reconhecimentoManual();
                 }
