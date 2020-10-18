@@ -43,20 +43,14 @@
 
 
 
-    <item android:title="Category 2">
+    <item android:title="Conta">
 
         <menu>
 
             <item
-                android:id="@+id/nav_6"
-                android:title="Nav6"
-                android:icon="@drawable/ic_menu_camera" />
-
-
-            <item
-                android:id="@+id/nav_7"
-                android:title="Nav7"
-                android:icon="@drawable/ic_menu_camera" />
+                android:id="@+id/itLogout"
+                android:icon="@drawable/ic_logout"
+                android:title="Sair" />
 
         </menu>
 

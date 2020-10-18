@@ -22,13 +22,14 @@
         android:id="@+id/txtvBemVindo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/roboto_light"
+        android:layout_marginTop="68dp"
+        android:fontFamily="@font/sanchez"
         android:text="@string/txtVBoasVindas"
         android:textColor="#000000"
         android:textSize="36sp"
         android:typeface="monospace"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.506"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imgvLogo" />
 
@@ -54,28 +55,12 @@
         android:background="@android:color/transparent"
         android:contentDescription="@null"
         android:scaleType="fitXY"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.384"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imgbtnEntrar"
-        app:srcCompat="@drawable/btncadastrar" />
-
-    <Button
-        android:id="@+id/btnPular"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="#0000"
-        android:fontFamily="@font/roboto_light"
-        android:onClick="abrirTelaInicial"
-        android:text="@string/txtPular"
-        android:textAllCaps="false"
-        android:textColor="#000000"
-        android:textSize="24sp"
-        android:typeface="monospace"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.615"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imgbtnCadastrar"
-        app:layout_constraintVertical_bias="0.62" />
+        app:layout_constraintTop_toBottomOf="@+id/imgbtnEntrar"
+        app:layout_constraintVertical_bias="0.059"
+        app:srcCompat="@drawable/btncadastrar" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include
+        android:id="@+id/customToolbar"
+        layout="@layout/toolbar" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="64dp"
+        android:fontFamily="@font/sanchez"
+        android:text="@string/txtLoginEntrar"
+        android:textColor="#000000"
+        android:textSize="36sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/customToolbar" />
+
+    <EditText
+        android:id="@+id/txtvEmail"
+        android:layout_width="289dp"
+        android:layout_height="47dp"
+        android:layout_marginTop="96dp"
+        android:ems="10"
+        android:fontFamily="@font/sanchez"
+        android:hint="email ou @ do usuário"
+        android:inputType="textEmailAddress"
+        android:textColor="#000000"
+        android:textColorHighlight="@color/lightgreen"
+        android:textColorLink="@color/lightgreen"
+        android:textCursorDrawable="@color/lightgreen"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+    <EditText
+        android:id="@+id/txtvPass"
+        android:layout_width="288dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:fontFamily="@font/sanchez"
+        android:hint="senha"
+        android:inputType="textPassword"
+        android:textColor="#000000"
+        android:textColorHighlight="@color/lightgreen"
+        android:textColorLink="@color/lightgreen"
+        android:textCursorDrawable="@color/lightgreen"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtvEmail" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:fontFamily="@font/sanchez"
+        android:text="@string/txtForgPass"
+        android:textAllCaps="false"
+        android:textColor="@color/lightgreen"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.773"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtvPass" />
+
+    <TextView
+        android:id="@+id/TextViewBottomVersion"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="bottom"
+        android:background="@color/lightgreen"
+        android:gravity="bottom"
+        app:layout_constraintBottom_toBottomOf="parent"></TextView>
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:fontFamily="sans-serif-light"
+        android:text="ou entrar com"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/TextViewBottomVersion" />
+
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="40dp"
+        android:layout_height="39dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="@+id/TextViewBottomVersion"
+        app:layout_constraintHorizontal_bias="0.412"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4"
+        app:srcCompat="@drawable/iconface" />
+
+    <ImageView
+        android:id="@+id/imageView8"
+        android:layout_width="38dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.592"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4"
+        app:srcCompat="@drawable/icongoogle" />
+
+    <ImageButton
+        android:id="@+id/imgbtnEntrar"
+        android:layout_width="400dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="100dp"
+        android:background="@android:color/transparent"
+        android:contentDescription="@null"
+        android:scaleType="fitXY"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.454"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3"
+        app:srcCompat="@drawable/btnentrarbranco" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -12,8 +12,11 @@ import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.util.Base64;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
+
 import androidx.appcompat.widget.Toolbar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.res.ResourcesCompat;
@@ -21,6 +24,7 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.auth.FirebaseAuth;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -33,6 +37,9 @@ public class TelaInicial extends AppCompatActivity implements NavigationView.OnN
     DrawerLayout drawerLayout;
     NavigationView navigationView;
     Toolbar toolbar;
+
+    FirebaseAuth mFirebaseAuth;
+    private FirebaseAuth.AuthStateListener mAuthStateListener;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,6 +62,11 @@ public class TelaInicial extends AppCompatActivity implements NavigationView.OnN
         toggle.syncState();
 
         navigationView.setNavigationItemSelectedListener(this);
+        setNavigationViewListener();
+    }
+
+    public void funcLogout(){
+
     }
 
     @Override
@@ -72,8 +84,28 @@ public class TelaInicial extends AppCompatActivity implements NavigationView.OnN
         startActivity(intent);
     }
 
+    private void setNavigationViewListener() {
+        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        navigationView.setNavigationItemSelectedListener(this);
+    }
+
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        // Handle navigation view item clicks here.
+        switch (item.getItemId()) {
+
+            case R.id.itLogout: {
+                FirebaseAuth.getInstance().signOut();
+
+                Intent intToLoginPage = new Intent(TelaInicial.this, MainActivity.class);
+                startActivity(intToLoginPage);
+
+                break;
+            }
+        }
+        //close navigation drawer
+        drawerLayout.closeDrawer(GravityCompat.START);
+
         return true;
     }
 }

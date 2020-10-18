@@ -9,18 +9,53 @@
     android:fitsSystemWindows="true"
     tools:openDrawer="start">
 
-    <com.google.android.material.navigation.NavigationView
+    <androidx.appcompat.widget.LinearLayoutCompat android:layout_height="match_parent" android:layout_width="match_parent">
+
+        <ScrollView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:paddingLeft="20sp"
+            android:paddingTop="80sp"
+            android:paddingRight="20sp"
+            android:paddingBottom="60sp"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="8dp"
+            tools:layout_editor_absoluteY="65dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/descricaoPlanta"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/sanchez"
+                    android:textColor="#000000"
+                    android:textSize="20sp" />
+            </LinearLayout>
+        </ScrollView>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <include
+            android:id="@+id/customToolbar"
+            layout="@layout/toolbar"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="51dp" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <com.google.android.material.navigation.NavigationView
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:id="@+id/nav_view"
         app:headerLayout="@layout/header"
         app:menu="@menu/main_menu"
         android:layout_gravity="start"/>
-
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-    </ScrollView>
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
@@ -82,40 +117,5 @@
         </com.google.android.material.bottomappbar.BottomAppBar>
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <include
-            android:id="@+id/customToolbar"
-            layout="@layout/toolbar" />
-
-        <ScrollView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            tools:layout_editor_absoluteX="249dp"
-            tools:layout_editor_absoluteY="295dp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical" >
-
-                <TextView
-                    android:id="@+id/descricaoPlanta"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginRight="40dp"
-                    android:layout_marginBottom="20dp"
-                    android:fontFamily="@font/sanchez"
-                    android:textColor="#000000"
-                    android:textSize="20sp" />
-            </LinearLayout>
-        </ScrollView>
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.drawerlayout.widget.DrawerLayout>

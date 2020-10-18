@@ -8,6 +8,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.MenuItem;
 import android.view.WindowManager;
 import android.widget.TextView;
@@ -63,6 +64,18 @@ public class DescricaoPlanta extends AppCompatActivity {
             super.onBackPressed();
         }
     }
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event)  {
+        if (keyCode == KeyEvent.KEYCODE_BACK ) {
+            Intent intent = new Intent(this, TelaInicial.class);
+            startActivity(intent);
+            return true;
+        }
+
+        return super.onKeyDown(keyCode, event);
+    }
+
 
 
 }
